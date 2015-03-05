@@ -270,81 +270,88 @@ endfunction
 " GENERAL REMAPPINGS
 "==============================================================================
 
-" General principle: CTRL keys operate on current file, SHIFT keys
-" move between files or invoke commands. CTRL keys also run helper commands
-" (searches, NERD Tree, etc), and SHIFT often have default vim uses.
+" CTRL keys are for moving between, opening, and finding files
+" SHIFT keys operate on the current file
+" LEADER keys do special behaviors and uncommon commands
 
 " LEADER is SPACE
 let mapleader=" "
 
-" Colon is for marks
+" <;> is for marks
+" <'> then goes to marks
 nnoremap ; m
 
-" m and M are for moving backward/forward in edit history
-nnoremap m <C-o>
-nnoremap M <C-i>
+" <C-n> and <C-m> move backward/forward in edit history
+nnoremap <C-n> <C-o>
+nnoremap <C-m> <C-i>
 
-" u and U are for moving backward/forward in undo history
-nnoremap <S-u> <C-r>
+" <u> and <U> are for moving backward/forward in undo history
+nnoremap U <C-r>
 
-" Insert single character with s
+" <s> inserts a single character under the cursor
 function! RepeatChar(char, count)
   return repeat(a:char, a:count)
 endfunction
 nnoremap <silent> s :<C-U>exec "normal i".RepeatChar(nr2char(getchar()), v:count1)<CR>
 
-" Adjust buffer sizes with arrow keys
-nnoremap <Left> :vertical resize -5<CR>
-nnoremap <Down> :resize +5<CR>
-nnoremap <Up> :resize -5<CR>
-nnoremap <Right> :vertical resize +5<CR>
+" <left>, <right>, <up>, <down> adjust window sizes
+nnoremap <silent> <Left> :vertical resize -5<CR>
+nnoremap <silent> <Down> :resize +5<CR>
+nnoremap <silent> <Up> :resize -5<CR>
+nnoremap <silent> <Right> :vertical resize +5<CR>
 
-" Switch windows with SHIFT + hjkl. Auto maximize
-" when switching between horizontal splits.
-nnoremap <S-h> <C-W>h
-nnoremap <S-j> <C-W>j
-nnoremap <S-k> <C-W>k
-nnoremap <S-l> <C-W>l
+" <C-h>, <C-j>, <C-k>, <C-l> switch between windows.
+" Auto maximize when switching between horizontal splits.
+nnoremap <C-h> <C-W>h
+nnoremap <C-j> <C-W>j
+nnoremap <C-k> <C-W>k
+nnoremap <C-l> <C-W>l
 
-" Easy moving up/down faster with CTRL
-nnoremap <C-d> <C-d>zz
-nnoremap <C-f> <C-u>zz
-vnoremap <C-d> <C-d>zz
-vnoremap <C-f> <C-u>zz
+" <D>, <F> for scrolling up/down
+nnoremap D <C-d>zz
+nnoremap F <C-u>zz
+vnoremap D <C-d>zz
+vnoremap F <C-u>zz
 
+" <C-d>, <C-f> are reserved for now
+nnoremap <C-d> <nop>
+nnoremap <C-f> <nop>
+vnoremap <C-d> <nop>
+vnoremap <C-f> <nop>
+
+" <H>, <J>, <K>, <L> for faster movement
 " TODO(azirbel): I think there is an easier command to map in both normal
 " and visual modes but can't look it up now
-nnoremap <C-h> 5h
-nnoremap <C-j> 5j
-nnoremap <C-k> 5k
-nnoremap <C-l> 5l
-vnoremap <C-h> 5h
-vnoremap <C-j> 5j
-vnoremap <C-k> 5k
-vnoremap <C-l> 5l
+nnoremap H 5h
+nnoremap J 5j
+nnoremap K 5k
+nnoremap L 5l
+vnoremap H 5h
+vnoremap J 5j
+vnoremap K 5k
+vnoremap L 5l
 
-" TODO(azirbel): Disabled tabs for now. Figure out later if I want them.
+" <C-e> and <C-w> for save and close.
+" I use W for close because I use it in Chrome/OSX.
+nnoremap <C-e> :w<CR>
+nnoremap <C-w> :q<CR><C-w><C-p><C-w>_
 
-" Save and close. I use W for close because I use it in Chrome/OSX.
-nnoremap <S-e> :w<CR>
-nnoremap <S-w> :q<CR><C-w><C-p><C-w>_
-
-" In case vertical maximization gets messed up
+" <_> to restore vertical maximization
 nnoremap _ <C-w>_
 
-" Add another vertical split
+" <+> to add another vertical split
 nnoremap + :sp<CR><C-w>L
 
-" Add another horizontal split
+" <=> to add another horizontal split
 nnoremap = :new<CR><C-w>_
 
-" Save a file as root
+" <L-e> to save a file as root
 nnoremap <leader>e :w !sudo tee % > /dev/null<CR>
 
-" After a search, SPACE+SPACE to stop highlighting results
-nnoremap <silent> <leader><space> :noh<cr>
+" <esc><esc> to stop highlighting results after a search
+nnoremap <silent> <Esc><Esc> :noh<cr>
 
-" Close vim with <leader> w
+" <L-w> to close vim
 nnoremap <leader>w :qal<CR>
 
 "==============================================================================
@@ -352,32 +359,29 @@ nnoremap <leader>w :qal<CR>
 "==============================================================================
 
 " NERDTree and NERDTreeTabs
-" Go straight to NERD tree
-nnoremap <silent> <C-t> :NERDTreeFocus<CR>
-" Open file in NERDTree
-map <C-r> :NERDTreeTabsFind<CR>
+" <C-t> to toggle NERDTree
+nnoremap <silent> <C-t> :NERDTreeToggle<CR>
+" <C-r> to open file in NERDTree
+nnoremap <C-r> :NERDTreeFind<CR>
 
-map <C-n> :NERDTreeTabsToggle<CR>
-
+" <L-a> and <L-s> to swap windows. TODO(azirbel): doesn't work well
 nnoremap <silent> <leader>a :call WindowSwap#MarkWindowSwap()<CR>
 nnoremap <silent> <leader>s :call WindowSwap#DoWindowSwap()<CR>
 
-" Explict setting of command t functions
-nnoremap <silent> <leader>t :CommandT<CR>
-nnoremap <silent> <leader>b :CommandTBuffer<CR>
+" <C-f> and <C-g> for find-in-project
+nnoremap <C-f> :call MyGitGrepPrompt()<CR>
+nnoremap <C-g> :call MyGitGrepWord()<CR>
 
-nnoremap <leader>f :call MyGitGrepPrompt()<CR>
-nnoremap <leader>g :call MyGitGrepWord()<CR>
-
-" Extension to MyGitGrep: open from quickfix and return to quickfix menu
+" <L-d> extension to MyGitGrep: open from quickfix and return to quickfix menu
+" TODO(azirbel): Consider removing
 nnoremap <leader>d <CR><C-w>p
 
-" Unite find in files, open in current window
+" <C-p> unite find in files, open in current window
 nnoremap <C-p> :<C-u>Unite -no-split -winheight=500 -buffer-name=files -start-insert file_rec/git:--cached:--others:--exclude-standard<CR>
-" Unite MRU, open in current window
+" <C-o> unite MRU, open in current window
 nnoremap <C-o> :<C-u>Unite -no-split -winheight=500 -buffer-name=file_mru file_mru<CR>
 
-" Unite commands but open in split window
+" <L-p>, <L-o> unite commands but open in split window
 nnoremap <leader>p :<C-u>Unite -direction=abo -winheight=500 -buffer-name=files -start-insert file_rec/git:--cached:--others:--exclude-standard<CR>
 nnoremap <leader>o :<C-u>Unite -direction=abo -winheight=500 -buffer-name=file_mru file_mru<CR>
 
@@ -395,14 +399,6 @@ function! StripWhitespace()
 endfunction
 nnoremap <leader>s :call StripWhitespace()<CR>
 
-let g:unite_source_grep_command = 'ag'
-let g:unite_source_grep_default_opts =
-      \ '-S --nocolor --nogroup --hidden --ignore ''.git'''
-let g:unite_source_grep_recursive_opt = ''
-
-" TODO(azirbel): Don't use unite for search - just use git grep & quickfix
-"nnoremap <C-g> :<C-u>Unite -direction=bot -buffer-name=grep grep:.<CR>
-
 " Crazy way to run python code from vim
 function! TestPy() range
     let startline = line("'<")
@@ -419,19 +415,27 @@ EOF
     echo sInVim
 endfunction
 
+" <BS> to delete the current line and move up a line
+nnoremap <BS> ddk
+
 " TODO(azirbel): "Cut/copy" buffers into different windows.
 
 " Abbreviations
+" TODO(azirbel): Put ember abbreviations in a separate file
 iab teh the
+iab todo TODO(azirbel):
 iab ie import Ember from 'ember';
-iab ece Ember.Controller.extend({<CR> <CR><BS>});<Up>
-iab ere Ember.Route.extend({<CR> <CR><BS>});<Up>
-iab eoc Ember.Object.create({<CR> <CR><BS>});<Up>
-iab cp function() {<CR> <CR><BS>}.property()<Up>
-iab cpp function() {<CR> <CR><BS>}.property(),<Up>
-iab ecp Ember.computed(function() {<CR> <CR><BS>}).property()<Up>
-iab ecpp Ember.computed(function() {<CR> <CR><BS>}).property(),<Up>
-" TODO: remap backspace in normal mode?
+iab ece Ember.Controller.extend({<CR><BS>});<Up><End>
+iab ere Ember.Route.extend({<CR><BS>});<Up><End>
+iab eoc Ember.Object.create({<CR><BS>});<Up><End>
+iab cp function() {<CR><BS>}.property()<Up><End>
+iab cpp function() {<CR><BS>}.property(),<Up><End>
+iab ecp Ember.computed(function() {<CR><BS>}).property()<Up><End>
+iab ecpp Ember.computed(function() {<CR><BS>}).property(),<Up><End>
+iab ob function() {<CR><BS>}.observes()<Up><End>
+iab obb function() {<CR><BS>}.observes(),<Up><End>
+iab eob Ember.observer(function() {<CR><BS>}).observes()<Up><End>
+iab eobb Ember.observer(function() {<CR><BS>}).observes(),<Up><End>
 
 function! VisualFindAndReplace()
   :OverCommandLine%s/
@@ -439,5 +443,15 @@ endfunction
 function! VisualFindAndReplaceWithSelection() range
   :'<,'>OverCommandLine s/
 endfunction
+
+" <L-n>, <L-m> call visual find and replace
+" TODO(azirbel): doesn't work well right now due to highlighting
 nnoremap <Leader>n :call VisualFindAndReplace()<CR>
 xnoremap <Leader>m :call VisualFindAndReplaceWithSelection()<CR>
+
+" Use CTRL to navigate MRU list
+autocmd FileType unite call s:my_mru_settings()
+function! s:my_mru_settings()
+  nnoremap <C-j> j
+  nnoremap <C-k> k
+endfunction
