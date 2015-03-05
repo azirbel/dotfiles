@@ -1,7 +1,6 @@
 "==============================================================================
 " MAIN SETTINGS
 "==============================================================================
-
 set nocompatible
 if !1 | finish | endif " Skip NeoBundleinitialization for vim-tiny or vim-small
 
@@ -11,16 +10,15 @@ endif
 
 call neobundle#begin(expand('~/.vim/bundle/'))
 NeoBundle 'Shougo/neobundle.vim'
-NeoBundle 'Shougo/neocomplcache.vim'
 NeoBundle 'Shougo/neomru.vim'
 NeoBundle 'Shougo/unite.vim'
 NeoBundle 'scrooloose/nerdtree'
 NeoBundle 'tpope/vim-fugitive'
-" NeoBundle 'pangloss/vim-javascript'
+NeoBundle 'pangloss/vim-javascript'
 NeoBundle 'scrooloose/syntastic'
-NeoBundle 'kien/ctrlp.vim'
 NeoBundle 'tpope/vim-commentary'
 NeoBundle 'tpope/vim-surround'
+NeoBundle 'mustache/vim-mustache-handlebars'
 " NeoBundle 'bling/vim-airline'
 " NeoBundle 'justinmk/vim-sneak'
 NeoBundle 'https://github.com/mattn/emmet-vim/'
@@ -29,6 +27,23 @@ NeoBundle 'wellle/targets.vim'
 NeoBundle 'kchmck/vim-coffee-script'
 NeoBundle 'groenewege/vim-less'
 NeoBundle 'plasticboy/vim-markdown'
+NeoBundle 'Valloric/YouCompleteMe', {
+     \ 'build' : {
+     \     'mac' : './install.sh --clang-completer --system-libclang --omnisharp-completer',
+     \     'unix' : './install.sh --clang-completer --system-libclang --omnisharp-completer',
+     \     'windows' : './install.sh --clang-completer --system-libclang --omnisharp-completer',
+     \     'cygwin' : './install.sh --clang-completer --system-libclang --omnisharp-completer'
+     \    }
+     \ }
+NeoBundle 'Shougo/vimproc.vim', {
+\ 'build' : {
+\     'windows' : 'tools\\update-dll-mingw',
+\     'cygwin' : 'make -f make_cygwin.mak',
+\     'mac' : 'make -f make_mac.mak',
+\     'linux' : 'make',
+\     'unix' : 'gmake',
+\    },
+\ }
 call neobundle#end()
 
 " Required by NeoBundle
@@ -42,7 +57,7 @@ filetype on
 NeoBundleCheck
 
 " Make it easy to open vimrc for editing (command :vrc)
-ca vrc e ~/.vim/vimrc
+ca vrc e ~/projects/personal/dotfiles/vimrc
 " Reload vimrc from anywhere (command :rl)
 ca rl so ~/.vimrc
 
@@ -111,6 +126,8 @@ autocmd FileType make setlocal noexpandtab
 "==============================================================================
 " PLUGIN CONFIGURATION
 "==============================================================================
+
+let g:syntastic_javascript_checkers = ['jshint']  " sets jshint as our javascript linter
 
 " Always focus the cursor on the file
 let g:nerdtree_tabs_focus_on_files=1
@@ -423,3 +440,12 @@ iab cpp function() {<CR> <CR><BS>}.property(),<Up>
 iab ecp Ember.computed(function() {<CR> <CR><BS>}).property()<Up>
 iab ecpp Ember.computed(function() {<CR> <CR><BS>}).property(),<Up>
 " TODO: remap backspace in normal mode?
+
+function! VisualFindAndReplace()
+  :OverCommandLine%s/
+endfunction
+function! VisualFindAndReplaceWithSelection() range
+  :'<,'>OverCommandLine s/
+endfunction
+nnoremap <Leader>n :call VisualFindAndReplace()<CR>
+xnoremap <Leader>m :call VisualFindAndReplaceWithSelection()<CR>
