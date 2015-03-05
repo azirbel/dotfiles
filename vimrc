@@ -27,14 +27,6 @@ NeoBundle 'wellle/targets.vim'
 NeoBundle 'kchmck/vim-coffee-script'
 NeoBundle 'groenewege/vim-less'
 NeoBundle 'plasticboy/vim-markdown'
-NeoBundle 'Valloric/YouCompleteMe', {
-     \ 'build' : {
-     \     'mac' : './install.sh --clang-completer --system-libclang --omnisharp-completer',
-     \     'unix' : './install.sh --clang-completer --system-libclang --omnisharp-completer',
-     \     'windows' : './install.sh --clang-completer --system-libclang --omnisharp-completer',
-     \     'cygwin' : './install.sh --clang-completer --system-libclang --omnisharp-completer'
-     \    }
-     \ }
 NeoBundle 'Shougo/vimproc.vim', {
 \ 'build' : {
 \     'windows' : 'tools\\update-dll-mingw',
