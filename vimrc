@@ -452,6 +452,6 @@ xnoremap <Leader>m :call VisualFindAndReplaceWithSelection()<CR>
 " Use CTRL to navigate MRU list
 autocmd FileType unite call s:my_mru_settings()
 function! s:my_mru_settings()
-  nnoremap <C-j> j
-  nnoremap <C-k> k
+  nnoremap <buffer> <C-j> j
+  nnoremap <buffer> <C-k> k
 endfunction
