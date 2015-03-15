@@ -313,12 +313,6 @@ nnoremap F <C-u>zz
 vnoremap D <C-d>zz
 vnoremap F <C-u>zz
 
-" <C-d>, <C-f> are reserved for now
-nnoremap <C-d> <nop>
-nnoremap <C-f> <nop>
-vnoremap <C-d> <nop>
-vnoremap <C-f> <nop>
-
 " <H>, <J>, <K>, <L> for faster movement
 " TODO(azirbel): I think there is an easier command to map in both normal
 " and visual modes but can't look it up now
@@ -368,9 +362,9 @@ nnoremap <C-r> :NERDTreeFind<CR>
 nnoremap <silent> <leader>a :call WindowSwap#MarkWindowSwap()<CR>
 nnoremap <silent> <leader>s :call WindowSwap#DoWindowSwap()<CR>
 
-" <C-f> and <C-g> for find-in-project
+" <C-f> and <C-d> for find-in-project
 nnoremap <C-f> :call MyGitGrepPrompt()<CR>
-nnoremap <C-g> :call MyGitGrepWord()<CR>
+" nnoremap <C-d> :call MyGitGrepWord()<CR>
 
 " <L-d> extension to MyGitGrep: open from quickfix and return to quickfix menu
 " TODO(azirbel): Consider removing
