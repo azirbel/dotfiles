@@ -12,7 +12,7 @@ sudo rm -rf ~/.viminfo > /dev/null 2>&1
 sudo rm -rf ~/.vim > /dev/null 2>&1
 
 # Symlink the new config files.
-DOTFILES_DIR="/Users/alex/Dropbox/projects/dotfiles"
+DOTFILES_DIR="/Users/alex/projects/dotfiles"
 ln -s "$DOTFILES_DIR/vim" ~/.vim
 ln -s "$DOTFILES_DIR/vimrc" ~/.vimrc
 
