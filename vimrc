@@ -1,6 +1,5 @@
 "==============================================================================
 " MAIN SETTINGS
-"==============================================================================
 set nocompatible
 if !1 | finish | endif " Skip NeoBundleinitialization for vim-tiny or vim-small
 
@@ -19,6 +18,7 @@ NeoBundle 'scrooloose/syntastic'
 NeoBundle 'tpope/vim-commentary'
 NeoBundle 'tpope/vim-surround'
 NeoBundle 'mustache/vim-mustache-handlebars'
+NeoBundle 'azirbel/vim-windowgrab'
 " NeoBundle 'bling/vim-airline'
 " NeoBundle 'justinmk/vim-sneak'
 NeoBundle 'https://github.com/mattn/emmet-vim/'
@@ -49,7 +49,7 @@ filetype on
 NeoBundleCheck
 
 " Make it easy to open vimrc for editing (command :vrc)
-ca vrc e ~/projects/personal/dotfiles/vimrc
+ca vrc e ~/projects/dotfiles/vimrc
 " Reload vimrc from anywhere (command :rl)
 ca rl so ~/.vimrc
 
@@ -112,6 +112,10 @@ autocmd BufNewFile,BufRead *.json setfiletype json syntax=javascript
 " Automatically maximize vertically when opening a new buffer
 autocmd BufWinEnter,BufEnter * execute "normal! \<C-w>_"
 
+" All windows should have a fixed height so <c-w>= will not change
+" their heights
+autocmd BufWinEnter,BufEnter * setlocal winfixheight
+
 " Doesn't expand tabs for makefiles
 autocmd FileType make setlocal noexpandtab
 
@@ -170,8 +174,6 @@ function! s:my_git_grep_settings()
   " Crawl through the pipes
   nnoremap <silent> <buffer> j :call CrawlDown()<CR>zz
   nnoremap <silent> <buffer> k :call CrawlUp()<CR>zz
-  nnoremap <silent> <buffer> <C-j> :call CrawlDown()<CR>zz
-  nnoremap <silent> <buffer> <C-k> :call CrawlUp()<CR>zz
 
   " Normal switch windows
   nnoremap <silent> <buffer> <S-h> <C-w>h
@@ -258,13 +260,18 @@ call unite#filters#sorter_default#use(['sorter_rank'])
 " Custom mappings for the unite buffer
 autocmd FileType unite call s:unite_settings()
 function! s:unite_settings()
-  " Enable navigation with control-j and control-k in insert mode
-  imap <buffer> <C-j>   <Plug>(unite_select_next_line)
-  imap <buffer> <C-k>   <Plug>(unite_select_previous_line)
+  " Enable navigation with <TAB> / BACKSPACE <BS>
+  imap <buffer> <TAB> <Plug>(unite_select_next_line)
+  noremap <buffer> <C-j> <C-W>j
+  noremap <buffer> <C-k> <C-W>k
 
   " TODO(azirbel): Test
   " imap <silent><buffer><expr> <C-f>     unite#do_action('split')
 endfunction
+
+let g:windowgrab_map_keys = 0 "prevent default bindings
+nnoremap <silent> <C-c> :call WindowGrab#DoWindowGrab()<CR>
+nnoremap <silent> <C-v> :call WindowGrab#MoveWindow()<CR>
 
 "==============================================================================
 " GENERAL REMAPPINGS
@@ -330,11 +337,14 @@ vnoremap L 5l
 nnoremap <C-e> :w<CR>
 nnoremap <C-w> :q<CR><C-w><C-p><C-w>_
 
-" <_> to restore vertical maximization
-nnoremap _ <C-w>_
+" <-> to restore vertical maximization
+nnoremap - <C-w>_
+
+" <_> to reset horizontal split sizes
+nnoremap _ <C-w>=
 
 " <+> to add another vertical split
-nnoremap + :sp<CR><C-w>L
+nnoremap + :new<CR><C-w>L
 
 " <=> to add another horizontal split
 nnoremap = :new<CR><C-w>_
@@ -354,7 +364,7 @@ nnoremap <leader>w :qal<CR>
 
 " NERDTree and NERDTreeTabs
 " <C-t> to toggle NERDTree
-nnoremap <silent> <C-t> :NERDTreeToggle<CR>
+nnoremap <silent> <C-t> :NERDTreeToggle<CR><C-w>=
 " <C-r> to open file in NERDTree
 nnoremap <C-r> :NERDTreeFind<CR>
 
