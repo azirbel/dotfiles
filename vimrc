@@ -309,10 +309,12 @@ nnoremap <silent> <Right> :vertical resize +5<CR>
 
 " <C-h>, <C-j>, <C-k>, <C-l> switch between windows.
 " Auto maximize when switching between horizontal splits.
-nnoremap <C-h> <C-W>h
+" Use <S-m> to center the cursor before switching horizontally, to make sure
+" that we don't switch to collapsed windows.
+nnoremap <C-h> M<C-W>h
 nnoremap <C-j> <C-W>j
 nnoremap <C-k> <C-W>k
-nnoremap <C-l> <C-W>l
+nnoremap <C-l> M<C-W>l
 
 " <D>, <F> for scrolling up/down
 nnoremap D <C-d>zz
@@ -459,3 +461,22 @@ function! s:my_mru_settings()
   nnoremap <buffer> <C-j> j
   nnoremap <buffer> <C-k> k
 endfunction
+
+" Taken from http://www.vim.org/scripts/script.php?script_id=2185 because I
+" don't feel like installing it via the plugins folder
+function! s:gotoline()
+	let buf = bufnr("%")
+	let file = bufname("%")
+
+	if ! filereadable(file) && line('$')==1
+                let cmd = "git show " . file
+		exec 'normal :r!LANG=C ' . cmd . "\n:1d\n"
+
+                " TODO: the mode of the file is not set to RO/no-modify
+                "       but I cannot figure out why
+                exec 'normal :set readonly nomodifiable\n'
+	endif
+
+endfunction
+
+autocmd! BufNewFile [^~/]*:*,[^~/]*:**/*,[^~/]**/*:*,[^~/]**/*:**/* call s:gotoline()
