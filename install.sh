@@ -1,4 +1,6 @@
 echo ""
 echo "INSTALLING VIM DOTFILES..."
-source ./vim/install.sh
+cd vim
+source ./install.sh
+cd ..
 echo "DONE."
