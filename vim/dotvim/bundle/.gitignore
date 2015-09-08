@@ -1,0 +1,9 @@
+# Ignore everything here, as it is installed by Neobundle...
+*
+
+# ...EXCEPT neobundle.vim - neobundle essentially is pre-installed and is
+# therefore able to install the other packages when vim runs.
+!neobundle.vim
+
+# And this file, of course.
+!.gitignore
