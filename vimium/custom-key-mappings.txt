@@ -1,0 +1,21 @@
+# Consistent page navigation as in my vim config
+# Shift (capitals) should move within the page
+unmap J
+unmap K
+unmap d
+unmap u
+
+map J scrollPageDown
+map K scrollPageUp
+map D scrollFullPageDown
+map F scrollFullPageUp
+
+# Control should move between pages and tabs
+map <c-n> goBack
+map <c-m> goForward
+map <c-h> previousTab
+map <c-l> nextTab
+
+# Disable annoying popover box when I use Cmd+Shift+b to open the bookmarks bar
+unmap b
+unmap B
