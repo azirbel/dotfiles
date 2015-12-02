@@ -28,6 +28,8 @@ NeoBundle 'kchmck/vim-coffee-script'
 NeoBundle 'groenewege/vim-less'
 NeoBundle 'plasticboy/vim-markdown'
 NeoBundle 'slim-template/vim-slim'
+NeoBundle 'burnettk/vim-angular'
+NeoBundle 'digitaltoad/vim-jade'
 NeoBundle 'Shougo/vimproc.vim', {
 \ 'build' : {
 \     'windows' : 'tools\\update-dll-mingw',
@@ -50,7 +52,7 @@ filetype on
 NeoBundleCheck
 
 " Make it easy to open vimrc for editing (command :vrc)
-ca vrc e ~/projects/dotfiles/vimrc
+ca vrc e ~/projects/dotfiles/vim/vimrc
 " Reload vimrc from anywhere (command :rl)
 ca rl so ~/.vimrc
 
@@ -227,6 +229,8 @@ function! FindProjectName()
   return s:name
 endfunction
 
+" TODO(azirbel): Save and restore sessions by repo and branch name
+
 " Sessions only restored if we start Vim without args.
 function! RestoreSession(name)
   if a:name != ""
@@ -289,9 +293,13 @@ let mapleader=" "
 " <'> then goes to marks
 nnoremap ; m
 
-" <C-n> and <C-m> move backward/forward in edit history
+" <C-n> and <C-m> move backward/forward in jumplist
 nnoremap <C-n> <C-o>
 nnoremap <C-m> <C-i>
+
+" <C-u> and <C-i> move backward/forward in changelist
+nnoremap <silent> <C-u> g;
+nnoremap <silent> <C-i> g,
 
 " <u> and <U> are for moving backward/forward in undo history
 nnoremap U <C-r>
@@ -337,6 +345,9 @@ vnoremap L 5l
 
 " <C-e> and <C-w> for save and close.
 " I use W for close because I use it in Chrome/OSX.
+" I use git for file changes/history, so I always prefer to save all files. I
+" may even set up autosave on every keystroke eventually.
+" TODO(azirbel): Autosave on keystroke
 nnoremap <C-e> :w<CR>
 nnoremap <C-w> :q<CR><C-w><C-p><C-w>_
 
@@ -389,8 +400,8 @@ nnoremap <C-p> :<C-u>Unite -no-split -winheight=500 -buffer-name=files -start-in
 nnoremap <C-o> :<C-u>Unite -no-split -winheight=500 -buffer-name=file_mru file_mru<CR>
 
 " <L-p>, <L-o> unite commands but open in split window
-nnoremap <leader>p :<C-u>Unite -direction=abo -winheight=500 -buffer-name=files -start-insert file_rec/git:--cached:--others:--exclude-standard<CR>
-nnoremap <leader>o :<C-u>Unite -direction=abo -winheight=500 -buffer-name=file_mru file_mru<CR>
+"nnoremap <leader>p :<C-u>Unite -direction=abo -winheight=500 -buffer-name=files -start-insert file_rec/git:--cached:--others:--exclude-standard<CR>
+"nnoremap <leader>o :<C-u>Unite -direction=abo -winheight=500 -buffer-name=file_mru file_mru<CR>
 
 "==============================================================================
 " WIP
@@ -430,6 +441,8 @@ nnoremap <BS> ddk
 " Abbreviations
 " TODO(azirbel): Put ember abbreviations in a separate file
 iab teh the
+iab baord board
+iab dashbaord dashboard
 iab todo TODO(azirbel):
 iab ie import Ember from 'ember';
 iab ece Ember.Controller.extend({<CR><BS>});<Up><End>
@@ -481,3 +494,17 @@ function! s:gotoline()
 endfunction
 
 autocmd! BufNewFile [^~/]*:*,[^~/]*:**/*,[^~/]**/*:*,[^~/]**/*:**/* call s:gotoline()
+
+" Match lines over 79 characters
+" TODO: Set up shortcut to do it
+highlight OverLength ctermbg=red ctermfg=white guibg=#592929
+match OverLength /\%80v.\+/
+
+" http://vim.wikia.com/wiki/Have_Vim_check_automatically_if_the_file_has_changed_externally
+au FocusGained,BufEnter * :silent! !
+
+" Copy file name into unnnamed/copy buffer
+" <L-f>
+nnoremap <silent> <leader>f :let @+ = expand("%")<CR>
+" <L-r>
+nnoremap <leader>r :redraw!<CR>
