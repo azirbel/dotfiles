@@ -1,0 +1,99 @@
+
+
+if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
+
+
+
+########
+# GIT
+
+# Git per-repo email settings
+alias emailo="git config user.email alex@opendoor.com"
+alias emailp="git config user.email alexzirbel@gmail.com"
+
+export PS1="\u@\h$ "
+
+if [ -f ~/.git-completion.bash ]; then
+  source ~/.git-completion.bash
+
+  __git_complete g __git_main
+  __git_complete gb _git_branch
+  __git_complete gc _git_checkout
+  __git_complete gci _git_commmit
+  __git_complete gcp _git_cherry_pick
+  __git_complete gd _git_diff
+  __git_complete gf _git_fetch
+  __git_complete gm _git_merge
+  __git_complete gp _git_pull
+  __git_complete gr _git_rebase
+
+  alias g="git"
+  alias gb="git branch"
+  alias gc="git checkout"
+  alias gci="git commit"
+  alias gcp="git cherry-pick"
+  alias gf="git fetch"
+  alias gm="git merge"
+  alias gnuke="git clean -dfx"
+  alias gp="git pull"
+  alias gs="git status"
+  alias gr="git rebase"
+
+  function gd() {
+    # If run with no arguments, diff against HEAD.
+    # I don't like staged/unstaged changes confusing things.
+    if [ $# -lt 1 ]; then
+      git diff HEAD | gitx
+    else
+      git diff $@ | gitx
+    fi
+  }
+
+  function gdn() {
+    # If run with no arguments, diff against HEAD.
+    # I don't like staged/unstaged changes confusing things.
+    if [ $# -lt 1 ]; then
+      git diff --name-only HEAD
+    else
+      git diff --name-only $@
+    fi
+  }
+
+  alias gl="git log --graph --decorate --pretty=oneline --abbrev-commit"
+  alias gfixdate="git commit --amend --date=\"now\""
+
+  # TODO: Alias "pushup" etc
+
+  # TODO: Get "gitl" back
+
+  # TODO: Install tig
+fi
+
+export ANDROID_HOME="/usr/local/Cellar/android-sdk/24.4"
+export PATH=$PATH:~/bin:$ANDROID_HOME:~/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0
+
+alias cdw="cd ~/opendoor/web"
+alias cdw2="cd ~/opendoor/web2"
+
+# Return the name of the branch we are currently on.
+function parse_git_branch () {
+  git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/\1/'
+}
+
+# Easily push a branch to github. Refuses to push to master, to prevent
+# stupid mistakes.
+function pushup () {
+  BRANCHNAME=`parse_git_branch`
+  if [ "$BRANCHNAME" == "master" ]; then
+    echo "Can't push up on branch master! Aborting."
+  else
+    if [ "$BRANCHNAME" != "" ]; then
+      echo "Executing: git push -u origin $BRANCHNAME $@"
+      git push -u origin $BRANCHNAME $@
+    else
+      echo "Can't push up, not in a git repository. Aborting."
+    fi
+  fi
+}
+
+alias off="/Users/alex/opendoor/web/bin/development/offer"
