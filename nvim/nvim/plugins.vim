@@ -29,6 +29,12 @@ call plug#begin()
 " buffer-based file management to tree-based file management.
 Plug 'scrooloose/nerdtree'
 
+" TAB-completion.
+"
+" --tern-completer installs TypeScript and JS support.
+" Node and NPM must be installed first.
+" TODO(azirbel): Do that install automatically.
+Plug 'Valloric/YouCompleteMe', { 'do': './install.py --tern-completer' }
 
 " Add plugins to &runtimepath
 call plug#end()

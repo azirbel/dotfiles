@@ -38,3 +38,6 @@ fi
 # See https://github.com/neovim/neovim/issues/2048.
 infocmp $TERM | sed 's/kbs=^[hH]/kbs=\\177/' > $TERM.ti
 tic $TERM.ti
+
+# Install python support for neovim
+pip install neovim

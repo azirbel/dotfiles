@@ -23,3 +23,6 @@ source ~/.config/nvim/remap-other.vim
 
 colorscheme solarized
 set background=dark
+
+" TODO(azirbel): Detect python2 on the system and set to that
+let g:python_host_prog='/usr/local/bin/python'
