@@ -15,10 +15,12 @@ nnoremap <C-w> :q<CR>
 ""C-k
 ""C-l
 " Switch between windows in various directions
-nnoremap <C-h> <C-W>h
-nnoremap <C-j> <C-W>j
-nnoremap <C-k> <C-W>k
-nnoremap <C-l> <C-W>l
+" For issues with <C-h>: see https://github.com/neovim/neovim/issues/2048.
+" I patched the backspace issue in `install.sh`.
+nnoremap <silent> <C-h> :wincmd h<CR>
+nnoremap <silent> <C-j> :wincmd j<CR>
+nnoremap <silent> <C-k> :wincmd k<CR>
+nnoremap <silent> <C-l> :wincmd l<CR>
 
 ""C-t
 " Toggle NERDTree

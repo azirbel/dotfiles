@@ -7,6 +7,8 @@
 if empty(glob('~/.config/nvim/autoload/plug.vim'))
   echom "Installing vim-plug and plugins..."
 
+  " TODO(azirbel): Don't do this. The file's already here. We need a different
+  " install trigger.
   " Grab plug.vim to manage plugins
   silent !curl -fLo ~/.config/nvim/autoload/plug.vim --create-dirs
     \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
