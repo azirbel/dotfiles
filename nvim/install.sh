@@ -32,3 +32,9 @@ if [ -e $NVIM_DEST ] || [ -L $NVIM_DEST ] ; then
 else
   ln -s $NVIM_SRC $NVIM_DEST
 fi
+
+# Workaround for C-h terminal bug. Neovim interprets <C-h> as backspace <BS>,
+# which screws up remappings.
+# See https://github.com/neovim/neovim/issues/2048.
+infocmp $TERM | sed 's/kbs=^[hH]/kbs=\\177/' > $TERM.ti
+tic $TERM.ti
