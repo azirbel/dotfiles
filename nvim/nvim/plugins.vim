@@ -36,5 +36,9 @@ Plug 'scrooloose/nerdtree'
 " TODO(azirbel): Do that install automatically.
 Plug 'Valloric/YouCompleteMe', { 'do': './install.py --tern-completer' }
 
+" Fuzzy-file search
+Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+Plug 'junegunn/fzf.vim'
+
 " Add plugins to &runtimepath
 call plug#end()
