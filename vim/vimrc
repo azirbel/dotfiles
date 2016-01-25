@@ -127,6 +127,7 @@ autocmd FileType make setlocal noexpandtab
 "==============================================================================
 
 let g:syntastic_javascript_checkers = ['jshint']  " sets jshint as our javascript linter
+let g:syntastic_ignore_files = ['.*\.slim$']
 
 " Always focus the cursor on the file
 let g:nerdtree_tabs_focus_on_files=1
