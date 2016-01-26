@@ -37,8 +37,13 @@ Plug 'scrooloose/nerdtree'
 Plug 'Valloric/YouCompleteMe', { 'do': './install.py --tern-completer' }
 
 " Fuzzy-file search
+" WAY faster than Cmd+T and Control-T, and much more powerful. Can search
+" files, git files, open buffers, recent files, and much more.
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
+
+" Auto-save
+Plug '907th/vim-auto-save'
 
 " Add plugins to &runtimepath
 call plug#end()

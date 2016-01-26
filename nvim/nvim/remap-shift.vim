@@ -1,11 +1,5 @@
 " SHIFT
-" Should be used for default commands and in-window movement
-
-""Q
-" Record in the default register
-" Conveniently, this also disables Ex mode, which is evil.
-" TODO(azirbel): Test
-nnoremap Q @q
+" Should be used for default commands and in-window movement.
 
 ""H
 ""J
@@ -31,3 +25,14 @@ nnoremap D <C-d>zz
 nnoremap F <C-u>zz
 vnoremap D <C-d>zz
 vnoremap F <C-u>zz
+
+""u
+""U
+" Move backward and forward in undo history
+nnoremap U <C-r>
+
+""Q
+" Record in the default register
+" Conveniently, this also disables Ex mode, which is evil.
+" TODO(azirbel): Test
+nnoremap Q @q

@@ -29,3 +29,8 @@ nnoremap <silent> <C-t> :NERDTreeToggle<CR>
 ""C-r
 " Go to current file in NERDTree
 nnoremap <C-r> :NERDTreeFind<CR>
+
+""C-x
+""C-c
+""C-v
+" TODO(azirbel): Reserved - use for moving windows around
