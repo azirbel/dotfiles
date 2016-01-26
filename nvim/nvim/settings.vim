@@ -19,3 +19,11 @@ set expandtab       " Use spaces instead of tabs
 set tabstop=2       " Two-space tabs
 set shiftwidth=2
 set softtabstop=2   " Make the spaces editable like tabs
+
+set autoindent      " Copy indent from current line
+set smartcase       " Be case-sensitive when search contains uppercase letter
+set cursorline      " Highlight the current line
+
+set shortmess=atI   " Don’t show the intro message when starting Vim
+set scrolloff=5     " Minimum number of lines above/below cursor in a search
+set autoread        " Automatically reload files

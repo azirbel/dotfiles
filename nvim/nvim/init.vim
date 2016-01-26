@@ -37,3 +37,13 @@ ca vrc e ~/projects/dotfiles/nvim/nvim/init.vim
 
 " Reload vimrc from anywhere (command :rl)
 ca rl so ~/.config/nvim/init.vim
+
+iab teh the
+iab baord board
+iab dashbaord dashboard
+iab todo TODO(azirbel):
+
+if argc() == 0
+  autocmd VimEnter * NERDTree
+  autocmd VimLeave * NERDTreeClose
+end

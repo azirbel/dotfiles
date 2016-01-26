@@ -21,11 +21,21 @@ nnoremap <silent> <C-m> :WintabsNext<CR>
 
 ""C-t
 " Toggle NERDTree
-nnoremap <silent> <C-t> :NERDTreeToggle<CR>
+nnoremap <silent> <C-t> :NERDTreeToggle<CR><C-w>=
 
 ""C-r
 " Go to current file in NERDTree
-nnoremap <C-r> :NERDTreeFind<CR>
+nnoremap <C-r> :NERDTreeFind<CR><C-w>=
+
+""C-y
+" Open a tree to find a file.
+nnoremap <C-y> :e .<CR>
+
+""C-u
+""C-i
+" Move backward and forward in the jumplist (list of locations you have been)
+nnoremap <C-u> <C-o>
+nnoremap <C-i> <C-i>
 
 ""C-z
 ""C-x

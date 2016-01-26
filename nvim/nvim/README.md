@@ -2,14 +2,17 @@
 
 ## Major Features
 
-* Many remappings
-* FZF file search
-* Autosave
+* Wintabs
 * NERDTree
+* FZF file search
+* YouCompleteMe
+* Autosave
+* Session management
+* Many remappings
 
 ## TODO
 
-* Tabbed windows
+* Jump list
 * Syntastic
 * Per-branch sessions
 * Sublime style find-in-files
@@ -21,7 +24,7 @@
   * C-x, C-c
 * Favorites
   * C-u, C-y
-* Strip whitespace
 * Show warning past line limit
 * Configure backup files
 * https://github.com/mattn/gist-vim
+* JSON syntax highlighter

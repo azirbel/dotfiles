@@ -25,14 +25,13 @@ let NERDTreeMapMenu='~'
 
 
 " FZF
-""C-o
+""C-p
 " Find file in history
-nnoremap <C-o> :History<CR>
+nnoremap <C-p> :History<CR>
 
-""C-i
+""C-o
 " Find files from git
-" TODO(azirbel): Use https://github.com/junegunn/fzf.vim/issues/47
-nnoremap <C-i> :GitFiles<CR>
+nnoremap <C-o> :GitFiles<CR>
 
 ""C-f
 " Find in files
