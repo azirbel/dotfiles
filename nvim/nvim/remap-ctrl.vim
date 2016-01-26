@@ -1,10 +1,6 @@
 " CTRL
 " Should be used to switch between windows and manage files
 
-""C-w
-" Close buffer
-nnoremap <C-w> :q<CR>
-
 ""C-h
 ""C-j
 ""C-k
@@ -31,7 +27,7 @@ nnoremap <silent> <C-t> :NERDTreeToggle<CR>
 " Go to current file in NERDTree
 nnoremap <C-r> :NERDTreeFind<CR>
 
+""C-z
 ""C-x
 ""C-c
-""C-v
 " TODO(azirbel): Reserved - use for moving windows around

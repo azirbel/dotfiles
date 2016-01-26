@@ -15,3 +15,7 @@ nnoremap <silent> <Esc><Esc> :noh<cr>
 ""plus
 " Add a new vertical split window
 nnoremap <silent> + :new<CR><C-w>L
+
+""equals
+" Make the windows the same width/height
+nnoremap <silent> = <C-w>=

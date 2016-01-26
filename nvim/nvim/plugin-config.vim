@@ -24,6 +24,22 @@ let NERDTreeMapDeleteBookmark='\D'
 let NERDTreeMapMenu='~'
 
 
+" FZF
+""C-o
+" Find file in history
+nnoremap <C-o> :History<CR>
+
+""C-i
+" Find files from git
+" TODO(azirbel): Use https://github.com/junegunn/fzf.vim/issues/47
+nnoremap <C-i> :GitFiles<CR>
+
+""C-f
+" Find in files
+" TODO(azirbel): Use a sublime-like search
+nnoremap <C-f> :Ag<CR>
+
+
 " Autosave
 " Enable AutoSave on Vim startup
 let g:auto_save = 1
@@ -51,6 +67,10 @@ nnoremap <leader>g :GitGutterToggle
 
 " WinTabs
 let g:wintabs_display = 'statusline'
+let g:wintabs_ui_sep_inbetween = ' '
+let g:wintabs_ui_sep_rightmost = ' '
+let g:wintabs_ui_active_left = '('
+let g:wintabs_ui_active_right = ')'
 
 " Always autoclose a window if it has no more tabs
 let g:wintabs_autoclose = 2
@@ -65,8 +85,31 @@ nnoremap <silent> - :WintabsClose<CR>
 " Close all but the current tab
 nnoremap <silent> _ :WintabsOnly<CR>
 
+""C-v
+""C-b
+" Move wintabs left and right.
+nnoremap <silent> <C-v> :WintabsMove -1<CR>
+nnoremap <silent> <C-b> :WintabsMove 1<CR>
+
 
 " Vim-Markdown
 
 " Disable folding for vim-markdown so everything is displayed
-let g:vim_markdown_folding_disabled=1
+let g:vim_markdown_folding_disabled = 1
+
+
+" Vim-Session
+let g:session_autosave = 'no'
+let g:session_autoload = 'no'
+let g:session_directory = '~/.config/nvim/sessions'
+
+""L-s
+" Save session
+" TODO(azirbel): Save to branchname
+nnoremap <silent> <leader>s :SaveSession<CR>
+
+""L-o
+" Open session
+" TODO(azirbel): Save to branchname
+" TODO(azirbel): Doesn't work
+nnoremap <silent> <leader>o :OpenSession<CR>

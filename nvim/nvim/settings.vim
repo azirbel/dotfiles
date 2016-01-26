@@ -12,5 +12,10 @@ set hidden
 set clipboard+=unnamedplus
 
 " Don't use swap files
-" We don't need backups when we have autosave and git.
+" We don't need backup swap files when we have autosave and git.
 set noswapfile
+
+set expandtab       " Use spaces instead of tabs
+set tabstop=2       " Two-space tabs
+set shiftwidth=2
+set softtabstop=2   " Make the spaces editable like tabs
