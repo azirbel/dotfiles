@@ -1,11 +1,6 @@
 " CTRL
 " Should be used to switch between windows and manage files
 
-""C-e
-" Save buffer
-" TODO(azirbel): Autosave on keystroke
-nnoremap <C-e> :w<CR>
-
 ""C-w
 " Close buffer
 nnoremap <C-w> :q<CR>
@@ -21,6 +16,12 @@ nnoremap <silent> <C-h> :wincmd h<CR>
 nnoremap <silent> <C-j> :wincmd j<CR>
 nnoremap <silent> <C-k> :wincmd k<CR>
 nnoremap <silent> <C-l> :wincmd l<CR>
+
+""C-n
+""C-m
+" Previous and next tab
+nnoremap <silent> <C-n> :WintabsPrevious<CR>
+nnoremap <silent> <C-m> :WintabsNext<CR>
 
 ""C-t
 " Toggle NERDTree

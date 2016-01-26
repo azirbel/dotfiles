@@ -52,3 +52,21 @@ nnoremap <leader>g :GitGutterToggle
 " WinTabs
 let g:wintabs_display = 'statusline'
 
+" Always autoclose a window if it has no more tabs
+let g:wintabs_autoclose = 2
+
+""minus
+" Close tabs with -
+" Also closes windows, if this is the last tab
+" TODO(azirbel): Organize logically, not by plugin
+nnoremap <silent> - :WintabsClose<CR>
+
+""underscore
+" Close all but the current tab
+nnoremap <silent> _ :WintabsOnly<CR>
+
+
+" Vim-Markdown
+
+" Disable folding for vim-markdown so everything is displayed
+let g:vim_markdown_folding_disabled=1

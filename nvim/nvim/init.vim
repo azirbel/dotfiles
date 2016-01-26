@@ -4,6 +4,9 @@ source ~/.config/nvim/plugins.vim
 " Plugin configuration
 source ~/.config/nvim/plugin-config.vim
 
+" Configure vim itself
+source ~/.config/nvim/settings.vim
+
 " Remappings
 "
 " I've remapped a lot of commands. To keep things sane, it's important to
@@ -21,22 +24,16 @@ source ~/.config/nvim/remap-ctrl.vim
 source ~/.config/nvim/remap-leader.vim
 source ~/.config/nvim/remap-other.vim
 
-colorscheme solarized
-set background=dark
-set number
-
-" Keep buffers open even when not visible. Very important! This lets us have
-" undo history even when closing/reopening files, and lets us implement the
-" tabbed-window workflow I like.
-set hidden
-
-" Use the system clipboard for vim stuff
-" Requires xcopy / pbcopy / pbpaste to be installed
-set clipboard+=unnamedplus
-
 " TODO(azirbel): Detect python2 on the system and set to that
+" TODO(azirbel): Not sure if we need this anymore
 let g:python_host_prog='/usr/local/bin/python'
 
 " Terminal mappings
 ""esc (Terminal): Exit terminal mode
 tnoremap <Esc> <C-\><C-n>
+
+" Make it easy to open vimrc for editing (command :vrc)
+ca vrc e ~/projects/dotfiles/nvim/nvim/init.vim
+
+" Reload vimrc from anywhere (command :rl)
+ca rl so ~/.config/nvim/init.vim

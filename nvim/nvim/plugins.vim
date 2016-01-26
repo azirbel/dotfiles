@@ -58,6 +58,16 @@ Plug 'airblade/vim-gitgutter'
 " TODO(azirbel): Doc
 Plug 'zefei/vim-wintabs'
 
+" TODO(azirbel): Doc
+Plug 'xolox/vim-misc'
+Plug 'xolox/vim-session'
+
+" TODO(azirbel): Doc
+Plug 'tpope/vim-surround'
+
+" TODO(azirbel): Doc
+Plug 'vim-scripts/FavEx'
+
 " Syntax highlighting
 Plug 'pangloss/vim-javascript'
 Plug 'groenewege/vim-less'
