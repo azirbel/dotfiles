@@ -22,7 +22,6 @@ endif
 
 call plug#begin()
 
-
 " Tree file browser.
 "
 " Ideally, should be opened/closed when needed. Prefer window or
@@ -44,6 +43,27 @@ Plug 'junegunn/fzf.vim'
 
 " Auto-save
 Plug '907th/vim-auto-save'
+
+" Git commands. The one I use most is :Gblame
+Plug 'tpope/vim-fugitive'
+
+" Highlight trailing whitespace in red.
+" Call :FixWhitespace to fix it (operates on the whole file)
+Plug 'bronson/vim-trailing-whitespace'
+
+" Shows git plus/minus signs in the gutter so you can see changes.
+" I turn this off by default and toggle it on/off. See plugin-config.vim.
+Plug 'airblade/vim-gitgutter'
+
+" TODO(azirbel): Doc
+Plug 'zefei/vim-wintabs'
+
+" Syntax highlighting
+Plug 'pangloss/vim-javascript'
+Plug 'groenewege/vim-less'
+Plug 'plasticboy/vim-markdown'
+Plug 'slim-template/vim-slim'
+Plug 'digitaltoad/vim-jade'
 
 " Add plugins to &runtimepath
 call plug#end()

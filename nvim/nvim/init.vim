@@ -23,6 +23,20 @@ source ~/.config/nvim/remap-other.vim
 
 colorscheme solarized
 set background=dark
+set number
+
+" Keep buffers open even when not visible. Very important! This lets us have
+" undo history even when closing/reopening files, and lets us implement the
+" tabbed-window workflow I like.
+set hidden
+
+" Use the system clipboard for vim stuff
+" Requires xcopy / pbcopy / pbpaste to be installed
+set clipboard+=unnamedplus
 
 " TODO(azirbel): Detect python2 on the system and set to that
 let g:python_host_prog='/usr/local/bin/python'
+
+" Terminal mappings
+""esc (Terminal): Exit terminal mode
+tnoremap <Esc> <C-\><C-n>
