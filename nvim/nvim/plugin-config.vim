@@ -112,3 +112,10 @@ nnoremap <silent> <leader>s :SaveSession<CR>
 " TODO(azirbel): Save to branchname
 " TODO(azirbel): Doesn't work
 nnoremap <silent> <leader>o :OpenSession<CR>
+
+
+" Favex
+let favex_fe = '<C-e>'
+let favex_fs = '\fs' " disable
+let favex_ff = '<C-w>'
+let favex_fd = '\fd' " disable

@@ -17,7 +17,7 @@ nnoremap <leader>e :w !sudo tee % > /dev/null<CR>
 " wrong places for no reason
 nnoremap <leader>r :redraw!<CR>
 
-""L-f
+""L-p
 " Copy path of current file into current/unnamed copy buffer
 " Useful to e.g. grab your filename and paste into chat or your test runner
 nnoremap <silent> <leader>f :let @+ = expand("%")<CR>
