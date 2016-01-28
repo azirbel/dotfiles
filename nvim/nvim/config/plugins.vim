@@ -1,25 +1,5 @@
 " Use vim-plug for plugin management.
 " https://github.com/junegunn/vim-plug
-
-
-" Automatically install vim-plug, and all plugins, if vim-plug isn't already
-" installed.
-if empty(glob('~/.config/nvim/autoload/plug.vim'))
-  echom "Installing vim-plug and plugins..."
-
-  " TODO(azirbel): Don't do this. The file's already here. We need a different
-  " install trigger.
-  " Grab plug.vim to manage plugins
-  silent !curl -fLo ~/.config/nvim/autoload/plug.vim --create-dirs
-    \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-
-  " When vim starts, run the install command. Then re-source the vimrc file.
-  autocmd VimEnter * PlugInstall | source $MYVIMRC
-
-  echom "Done."
-endif
-
-
 call plug#begin()
 
 " Tree file browser.

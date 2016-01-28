@@ -1,5 +1,13 @@
-" SHIFT
-" Should be used for default commands and in-window movement.
+" Moving around within a file and editing efficiently.
+"
+" When remapping keys, prefer using SHIFT.
+
+source ~/.config/nvim/config/file-editing/gitgutter.vim
+source ~/.config/nvim/config/file-editing/vim-markdown.vim
+
+""esc-esc
+" Stop highlighting results after a search
+nnoremap <silent> <Esc><Esc> :noh<cr>
 
 ""H
 ""J
@@ -30,9 +38,3 @@ vnoremap F <C-u>zz
 ""U
 " Move backward and forward in undo history
 nnoremap U <C-r>
-
-""Q
-" Record in the default register
-" Conveniently, this also disables Ex mode, which is evil.
-" TODO(azirbel): Test
-nnoremap Q @q
