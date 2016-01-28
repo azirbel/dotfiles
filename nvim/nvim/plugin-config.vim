@@ -1,3 +1,7 @@
+" Plugin configuration should go here.
+" Key mappings should go in remap-* files.
+
+
 " NERDTree
 " Default commands:
 ""C-j (NERDTree): Jump to next sibling
@@ -119,3 +123,16 @@ let favex_fe = '<C-e>'
 let favex_fs = '\fs' " disable
 let favex_ff = '<C-w>'
 let favex_fd = '\fd' " disable
+
+
+" Syntastic
+" TODO(azirbel): Determine if we want active or passive mode
+let g:syntastic_mode_map = {
+    \ "mode": "passive",
+    \ "active_filetypes": [],
+    \ "passive_filetypes": [] }
+" let g:syntastic_check_on_wq = 1
+let g:syntastic_error_symbol = "✗"
+let g:syntastic_style_error_symbol = "✗"
+let g:syntastic_warning_symbol = "✗"
+let g:syntastic_style_warning_symbol = "✗"

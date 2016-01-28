@@ -9,11 +9,12 @@
 * Autosave
 * Session management
 * Many remappings
+* Passive checking tools
+  * Syntastic
+  * GitGutter
 
 ## TODO
 
-* Jump list
-* Syntastic
 * Per-branch sessions
 * Sublime style find-in-files
 * vim-over

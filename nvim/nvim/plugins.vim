@@ -68,6 +68,12 @@ Plug 'tpope/vim-surround'
 " TODO(azirbel): Doc
 Plug 'vim-scripts/FavEx'
 
+" TODO(azirbel): Doc
+Plug 'scrooloose/syntastic'
+
+" TODO(azirbel): Doc
+Plug 'osyo-manga/vim-over'
+
 " Syntax highlighting
 Plug 'pangloss/vim-javascript'
 Plug 'groenewege/vim-less'
