@@ -58,7 +58,9 @@ ca rl so ~/.vimrc
 
 syntax on
 colorscheme solarized
-set background=dark
+
+" I'd usually use dark, but use light to flag that we're not in neovim
+set background=light
 set t_Co=256        " Enable color schemes with 256 colors
 
 set autoindent      " Copy indent from current line
