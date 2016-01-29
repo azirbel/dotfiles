@@ -75,8 +75,11 @@ nnoremap <C-o> :GitFiles<CR>
 
 ""C-f
 " Fuzzy find in files using FZF and Ag
+" Use ''<Left> to put the cursor within quotes automatically.
+" Use <C-u> to clear any existing commands before running this one.
 " TODO(azirbel): Use a sublime-like search. Fuzzy match isn't very useful.
-nnoremap <C-f> :Ag<CR>
+nnoremap <C-f> :<C-u>Ag ''<Left>
+vnoremap <C-f> :<C-u>Ag ''<Left>
 
 ""minus
 " Close tabs with -

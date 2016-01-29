@@ -45,6 +45,7 @@ Where:
 
 ## TODO
 
+* Reload files when they change in the background
 * Per-branch sessions
 * Sublime style find-in-files
 * Try out wellle/targets.vim

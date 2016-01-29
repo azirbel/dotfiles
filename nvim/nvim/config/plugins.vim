@@ -87,6 +87,11 @@ Plug 'tpope/vim-surround'
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Make `.` repeating work with plugin commands, like vim-surround.
+Plug 'tpope/vim-repeat'
+
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Highlight trailing whitespace in red
 "
 " Call :FixWhitespace to fix the errors (operates on the whole file)
@@ -116,6 +121,12 @@ Plug 'vim-scripts/FavEx'
 "
 " TODO(azirbel): Testing this one out.
 Plug 'osyo-manga/vim-over'
+
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"
+" TODO(azirbel): Testing this one out.
+Plug 'michaeljsmith/vim-indent-object'
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
