@@ -46,10 +46,13 @@ Plug 'scrooloose/nerdtree'
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " TAB-completion
 "
-" --tern-completer installs TypeScript and JS support.
-" Node and NPM must be installed first.
-" TODO(azirbel): Do that install automatically.
-Plug 'Valloric/YouCompleteMe', { 'do': './install.py --tern-completer' }
+" I stopped using YCM because it's too slow and lags vim.
+" deoplete is built for neovim/async out of the box, so hopefully it will work
+" better.
+"
+" TODO(azirbel): Requires python3 (sudo pip3 install neovim). Document
+" somewhere.
+Plug 'Shougo/deoplete.nvim'
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -72,13 +75,6 @@ Plug 'tpope/vim-fugitive'
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Syntax checker
-"
-" Check syntax as you write, rather than when you run/compile.
-Plug 'scrooloose/syntastic'
-
-
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Edit characters surrounding a word
 "
 " For example, change 'word' to "word", or thing to <p>thing</p>, without
@@ -96,14 +92,6 @@ Plug 'tpope/vim-repeat'
 "
 " Call :FixWhitespace to fix the errors (operates on the whole file)
 Plug 'bronson/vim-trailing-whitespace'
-
-
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Line-by-line git status
-"
-" Shows git plus/minus signs in the gutter so you can see where changes have
-" been made.
-Plug 'airblade/vim-gitgutter'
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -130,12 +118,23 @@ Plug 'michaeljsmith/vim-indent-object'
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"
+" TODO(azirbel): Testing this one out.
+"
+" webapi-vim is a dependency for gist-vim.
+Plug 'mattn/webapi-vim'
+Plug 'mattn/gist-vim'
+
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Syntax highlighting
 Plug 'pangloss/vim-javascript'
 Plug 'groenewege/vim-less'
 Plug 'plasticboy/vim-markdown'
-Plug 'slim-template/vim-slim'
+Plug 'JPricey/vim-slim'
 Plug 'digitaltoad/vim-jade'
+Plug 'tpope/vim-git'
+Plug 'vim-ruby/vim-ruby'
 
 
 " Add plugins to &runtimepath

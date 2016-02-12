@@ -26,3 +26,6 @@ source ~/.config/nvim/config/abbreviations.vim
 source ~/.config/nvim/config/editor.vim
 source ~/.config/nvim/config/file-editing.vim
 source ~/.config/nvim/config/file-management.vim
+
+" Use deoplete.
+let g:deoplete#enable_at_startup = 1

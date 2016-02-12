@@ -3,6 +3,7 @@
 " When remapping keys, prefer using CTRL.
 
 source ~/.config/nvim/config/file-management/favex.vim
+source ~/.config/nvim/config/file-management/search.vim
 source ~/.config/nvim/config/file-management/nerd-tree.vim
 source ~/.config/nvim/config/file-management/wintabs.vim
 
@@ -34,7 +35,7 @@ nnoremap <C-r> :NERDTreeFind<CR><C-w>=
 
 ""C-y
 " Open a tree to find a file.
-nnoremap <C-y> :e .<CR>
+nnoremap <C-y> :Ex<CR>
 
 ""C-u
 ""C-i
@@ -78,8 +79,8 @@ nnoremap <C-o> :GitFiles<CR>
 " Use ''<Left> to put the cursor within quotes automatically.
 " Use <C-u> to clear any existing commands before running this one.
 " TODO(azirbel): Use a sublime-like search. Fuzzy match isn't very useful.
-nnoremap <C-f> :<C-u>Ag ''<Left>
-vnoremap <C-f> :<C-u>Ag ''<Left>
+nnoremap <C-f> :<C-u>Ag 
+vnoremap <C-f> :<C-u>Ag 
 
 ""minus
 " Close tabs with -
