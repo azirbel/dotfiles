@@ -74,3 +74,8 @@ ca vrc e ~/projects/dotfiles/nvim/nvim/init.vim
 
 " Reload vimrc from anywhere (command :rl)
 ca rl so ~/.config/nvim/init.vim
+
+""L-l
+" Put link to current line on github into copy buffer
+nnoremap <leader>l V :Gbrowse!<CR>
+vnoremap <leader>l :Gbrowse!<CR>
