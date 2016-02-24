@@ -1,8 +1,11 @@
 " Closing and opening the editor, sessions, editor maintainance.
 
+" TODO(azirbel): These don't belong here
 source ~/.config/nvim/config/editor/autosave.vim
 source ~/.config/nvim/config/editor/sessions.vim
 source ~/.config/nvim/config/editor/syntastic.vim
+
+" TODO(azirbel): Only settings should go here
 
 colorscheme solarized
 set background=dark
