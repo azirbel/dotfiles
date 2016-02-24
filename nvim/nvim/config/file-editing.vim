@@ -38,3 +38,17 @@ vnoremap F <C-u>zz
 ""U
 " Move backward and forward in undo history
 nnoremap U <C-r>
+
+""C-q
+""Q
+" Faster macro recording and replay at the cost of only using one register for
+" it. Uses the q register by default.
+" TODO(azirbel): Working on this
+"nnoremap <C-q> :g/\(<c-r>/\)/ normal @q
+"nno-remap Q *``Nqqn
+
+" Combine lines, since I remapped J.
+" Also, I prefer to be on the line which should be moved up, rather than the
+" line which stays in place.
+" TODO(azirbel): Testing this out
+"nnoremap <BS> k^<S-j>

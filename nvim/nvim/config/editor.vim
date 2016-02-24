@@ -27,6 +27,7 @@ set shiftwidth=2    " TODO(azirbel): Needs doc
 set softtabstop=2   " Make the spaces editable like tabs
 
 set autoindent      " Copy indent from current line
+set ignorecase      " Ignore case in searches, except... (smartcase)
 set smartcase       " Be case-sensitive when search contains uppercase letter
 set cursorline      " Highlight the current line
 
@@ -36,12 +37,6 @@ set autoread        " Automatically reload files
 
 " Use SPACE as the leader key, instead of backslash
 let mapleader=" "
-
-" Automatically open NERDTree if nvim is run with no arguments
-if argc() == 0
-  autocmd VimEnter * NERDTree
-  autocmd VimLeave * NERDTreeClose
-end
 
 ""L-w
 " Close all windows and exit vim

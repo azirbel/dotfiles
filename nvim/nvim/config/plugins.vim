@@ -52,7 +52,8 @@ Plug 'scrooloose/nerdtree'
 "
 " TODO(azirbel): Requires python3 (sudo pip3 install neovim). Document
 " somewhere.
-Plug 'Shougo/deoplete.nvim'
+" TODO(azirbel): I stopped using this one because it wasn't working.
+" Plug 'Shougo/deoplete.nvim'
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
