@@ -77,3 +77,7 @@ ca rl so ~/.config/nvim/init.vim
 " Put link to current line on github into copy buffer
 nnoremap <leader>l V :Gbrowse!<CR>
 vnoremap <leader>l :Gbrowse!<CR>
+
+""L-j
+" TODO(azirbel): Put this in the right place
+nnoremap <leader>j :Goyo<CR>

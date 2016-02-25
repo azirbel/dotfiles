@@ -148,6 +148,12 @@ Plug 'mattn/gist-vim'
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"
+" TODO(azirbel): Testing this one out.
+Plug 'junegunn/goyo.vim'
+
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Syntax highlighting
 Plug 'pangloss/vim-javascript'
 Plug 'groenewege/vim-less'
