@@ -1,2 +1,6 @@
 vim/bundle
 vim/scripts/temp.txt
+
+nvim/nvim/.init.vim-rplugin~
+nvim/nvim/.netrwhist
+nvim/nvim/autoload/plug.vim.old
