@@ -52,3 +52,8 @@ nnoremap U <C-r>
 " line which stays in place.
 " TODO(azirbel): Testing this out
 "nnoremap <BS> k^<S-j>
+
+
+" Automatically reformat text to hard wrap nicely
+" TODO(azirbel): Move to pencil config file
+autocmd BufNewFile,BufRead *.md call pencil#init()

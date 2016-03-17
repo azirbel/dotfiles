@@ -4,6 +4,9 @@
 " Plugins in rough order of importance.
 
 
+" TODO(azirbel): Try https://github.com/shuber/vim-promiscuous
+
+
 " TODO(azirbel): Detect python2 on the system and set to that
 " TODO(azirbel): Not sure if we need this anymore.
 " TODO(azirbel): Note that I had to `pip install neovim` to get things running
@@ -154,10 +157,16 @@ Plug 'junegunn/goyo.vim'
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"
+" TODO(azirbel): Testing this one out.
+Plug 'reedes/vim-pencil'
+
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Syntax highlighting
 Plug 'pangloss/vim-javascript'
 Plug 'groenewege/vim-less'
-Plug 'plasticboy/vim-markdown'
+Plug 'tpope/vim-markdown'
 Plug 'JPricey/vim-slim'
 Plug 'digitaltoad/vim-jade'
 Plug 'tpope/vim-git'

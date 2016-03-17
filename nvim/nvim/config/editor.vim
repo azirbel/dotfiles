@@ -9,7 +9,7 @@ source ~/.config/nvim/config/editor/syntastic.vim
 
 colorscheme solarized
 set background=dark
-set number
+set nonumber
 
 " Keep buffers open even when not visible. Very important! This lets us have
 " undo history even when closing/reopening files, and lets us implement the
@@ -38,6 +38,15 @@ set shortmess=atI   " Don’t show the intro message when starting Vim
 set scrolloff=5     " Minimum number of lines above/below cursor in a search
 set autoread        " Automatically reload files
 
+set undolevels=1000
+
+" Keep undo history in a file so it persists across sessions and doesn't get
+" cleared unexpectedly
+if has('persistent_undo')
+  set undodir=$HOME/.config/nvim/undo
+  set undofile
+endif
+
 " Use SPACE as the leader key, instead of backslash
 let mapleader=" "
 
@@ -60,8 +69,40 @@ nnoremap <leader>r :redraw!<CR>
 " Useful to e.g. grab your filename and paste into chat or your test runner
 nnoremap <silent> <leader>p :let @+ = expand("%")<CR>
 
-""esc (Terminal): Exit terminal mode
-tnoremap <Esc> <C-\><C-n>
+""esc (Terminal)
+" Exit terminal mode.
+" I don't need to do this very often - usually I just want to switch windows
+" with C-h, C-j etc. Sometimes this is useful so I can copy text from the
+" terminal window.
+tnoremap <esc><esc> <C-\><C-n>
+
+" TODO(azirbel): This should go in a terminal.vim file
+function! EnterTerminal()
+  terminal
+
+  ""C-h (Terminal)
+  ""C-j (Terminal)
+  ""C-k (Terminal)
+  ""C-l (Terminal)
+  " Move to other splits/windows directly from terminal mode
+  tnoremap <buffer> <C-h> <C-\><C-n><C-w>h
+  tnoremap <buffer> <C-j> <C-\><C-n><C-w>j
+  tnoremap <buffer> <C-k> <C-\><C-n><C-w>k
+  tnoremap <buffer> <C-l> <C-\><C-n><C-w>l
+
+  ""C-n (Terminal)
+  ""C-m (Terminal)
+  " Previous and next tab directly from terminal mode
+  nnoremap <buffer> <silent> <C-n> :WintabsPrevious<CR>
+  nnoremap <buffer> <silent> <C-m> :WintabsNext<CR>
+endfunction
+
+" For terminals
+" TODO(azirbel): This should go in a terminal.vim file
+autocmd BufWinEnter,WinEnter,TermOpen term://* startinsert
+autocmd BufLeave,TermClose term://* stopinsert
+
+nnoremap <leader>t :call EnterTerminal()<CR>
 
 ""Q
 " No-op: Disable ex mode, which is evil
