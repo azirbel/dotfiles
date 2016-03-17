@@ -5,6 +5,9 @@
 
 
 " TODO(azirbel): Try https://github.com/shuber/vim-promiscuous
+" TODO(azirbel): Use https://github.com/Shougo/neomru.vim again. FZF doesn't
+" cut it for history
+" TODO(azirbel): Try https://github.com/tommcdo/vim-exchange
 
 
 " TODO(azirbel): Detect python2 on the system and set to that
