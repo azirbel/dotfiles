@@ -17,7 +17,6 @@ mappings, into your own vim config.
 
 * Work with many files at once using Wintabs, NERDTree, and FZF to easily
   switch between them
-* Edit faster with YouCompleteMe, Syntastic, GitGutter, and more
 * Pick up where you left off with session management
 * Stop mashing `:w` and let autosave take care of saving files
 * Run commands and switch files faster with a huge number of remapped commands,
@@ -52,9 +51,6 @@ Where:
 * Try out vim-angular
 * Window grab / window swap
   * Reserved: C-x, C-c
-* Favorites list
-  * Reserved: C-u, C-y
 * Show warning past line limit
 * Configure backup files
-* Try out https://github.com/mattn/gist-vim
 * Add JSON syntax highlighter

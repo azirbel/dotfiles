@@ -9,7 +9,7 @@ source ~/.config/nvim/config/editor/syntastic.vim
 
 colorscheme solarized
 set background=dark
-set nonumber
+set number
 
 " Keep buffers open even when not visible. Very important! This lets us have
 " undo history even when closing/reopening files, and lets us implement the

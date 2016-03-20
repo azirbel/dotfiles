@@ -92,8 +92,8 @@ nnoremap <silent> - :WintabsClose<CR>
 " Close all but the current tab
 nnoremap <silent> _ :WintabsOnly<CR>
 
-""C-v
-""C-b
+""L-n
+""L-m
 " Move wintabs left and right.
-nnoremap <silent> <C-v> :WintabsMove -1<CR>
-nnoremap <silent> <C-b> :WintabsMove 1<CR>
+nnoremap <silent> <leader>n :WintabsMove -1<CR>
+nnoremap <silent> <leader>m :WintabsMove 1<CR>
