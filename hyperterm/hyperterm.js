@@ -23,7 +23,7 @@ module.exports = {
 
     // custom css to embed in the main window
     css: `
-      .tab_active {
+      .tab_tab:not(.tab_active) {
         background-color: #001E29;
       }
 
@@ -76,7 +76,8 @@ module.exports = {
   //   `hyperpower`
   //   `@company/project`
   //   `project#1.0.1`
-  plugins: [],
+  plugins: [
+  ],
 
   // in development, you can create a directory under
   // `~/.hyperterm_plugins/local/` and include it here
