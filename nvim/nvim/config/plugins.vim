@@ -39,7 +39,7 @@ call plug#begin()
 "
 " FZF.vim sets up the vim commands and integration. FZF is a dependency.
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
-Plug 'junegunn/fzf.vim'
+Plug 'jpricey/fzf.vim'
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -122,6 +122,12 @@ Plug 'bronson/vim-trailing-whitespace'
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Sort CSS properties in "outside-in" order.
+" I worked on this plugin with Joe.
+Plug 'JPricey/vim-order-css'
+
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Maintain a list of favorite files
 "
 " TODO(azirbel): Testing this one out. Some interesting ideas:
@@ -166,6 +172,13 @@ Plug 'reedes/vim-pencil'
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"
+" TODO(azirbel): Testing this one out.
+Plug 'tpope/vim-bundler'
+Plug 'tpope/vim-rails'
+
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Syntax highlighting
 Plug 'pangloss/vim-javascript'
 Plug 'groenewege/vim-less'
@@ -174,6 +187,7 @@ Plug 'JPricey/vim-slim'
 Plug 'digitaltoad/vim-jade'
 Plug 'tpope/vim-git'
 Plug 'vim-ruby/vim-ruby'
+Plug 'mustache/vim-mustache-handlebars'
 
 
 " Add plugins to &runtimepath

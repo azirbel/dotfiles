@@ -58,3 +58,6 @@ nnoremap U <C-r>
 " TODO(azirbel): Move to pencil config file
 " TODO(azirbel): I think this isn't working for me
 autocmd BufNewFile,BufRead *.md call pencil#init()
+
+":FormatJSON
+command! FormatJSON %!python -m json.tool

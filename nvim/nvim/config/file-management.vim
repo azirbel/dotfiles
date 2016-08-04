@@ -72,7 +72,7 @@ nnoremap <C-p> :History<CR>
 
 ""C-o
 " Find files from git using FZF
-nnoremap <C-o> :GitFiles<CR>
+nnoremap <C-o> :GitFiles/<CR>
 
 ""C-f
 " Fuzzy find in files using FZF and Ag
