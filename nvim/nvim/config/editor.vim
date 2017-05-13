@@ -2,6 +2,8 @@
 
 " Only settings should go here.
 
+set shell=/bin/bash
+
 colorscheme solarized
 set background=dark
 set number

@@ -2,6 +2,7 @@ source ~/.config/nvim/config/plugins/autosave.vim
 source ~/.config/nvim/config/plugins/favex.vim
 source ~/.config/nvim/config/plugins/gitgutter.vim
 source ~/.config/nvim/config/plugins/nerd-tree.vim
+source ~/.config/nvim/config/plugins/promiscuous.vim
 source ~/.config/nvim/config/plugins/search.vim
 source ~/.config/nvim/config/plugins/sessions.vim
 source ~/.config/nvim/config/plugins/syntastic.vim

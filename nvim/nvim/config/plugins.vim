@@ -136,6 +136,11 @@ Plug 'tpope/vim-rails'
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Ruby on Rails power tools
+Plug 'shuber/vim-promiscuous'
+
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Syntax highlighting
 Plug 'pangloss/vim-javascript'
 Plug 'groenewege/vim-less'
