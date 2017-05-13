@@ -41,8 +41,6 @@ call plug#begin()
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'jpricey/fzf.vim'
 
-Plug 'scrooloose/syntastic'
-
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Give each window a set of tabs
@@ -68,20 +66,7 @@ Plug '907th/vim-auto-save'
 "
 " Ideally, should be closed when not needed; prefer window or buffer-based
 " file management to tree-based file management.
-Plug 'scrooloose/nerdtree'
-
-
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" TAB-completion
-"
-" I stopped using YCM because it's too slow and lags vim.
-" deoplete is built for neovim/async out of the box, so hopefully it will work
-" better.
-"
-" TODO(azirbel): Requires python3 (sudo pip3 install neovim). Document
-" somewhere.
-" TODO(azirbel): I stopped using this one because it wasn't working.
-" Plug 'Shougo/deoplete.nvim'
+Plug 'scrooloose/nerdtree', { 'on': ['NERDTreeToggle', 'NERDTreeFind'] }
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -133,60 +118,26 @@ Plug 'JPricey/vim-order-css'
 " Search for the highlighted text.
 Plug 'JPricey/vim-v-star'
 
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Maintain a list of favorite files
-"
-" TODO(azirbel): Testing this one out. Some interesting ideas:
-" - Closing all files in a window shouldn't affect favorites
-" - It should be easier to edit the favorites list
-" - FZF should search the favorites list
-Plug 'vim-scripts/FavEx'
-
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Search and replace over a visual range
-"
-" TODO(azirbel): Testing this one out.
 Plug 'osyo-manga/vim-over'
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-"
-" TODO(azirbel): Testing this one out.
+" Defines a new text object representing lines of code at the same indent level
 Plug 'michaeljsmith/vim-indent-object'
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-"
-" TODO(azirbel): Testing this one out.
-"
+" Easily create gists with :Gist
 " webapi-vim is a dependency for gist-vim.
 Plug 'mattn/webapi-vim'
 Plug 'mattn/gist-vim'
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-"
-" TODO(azirbel): Testing this one out.
-Plug 'junegunn/goyo.vim'
-
-
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-"
-" TODO(azirbel): Testing this one out.
-"Plug 'vimwiki/vimwiki'
-
-
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-"
-" TODO(azirbel): Testing this one out.
-" Don't like it. Too aggressive reformatting lines.
-"Plug 'reedes/vim-pencil'
-
-
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-"
-" TODO(azirbel): Testing this one out.
+" Ruby on Rails power tools
 Plug 'tpope/vim-bundler'
 Plug 'tpope/vim-rails'
 
