@@ -131,6 +131,11 @@ Plug 'shuber/vim-promiscuous'
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Simplifies the transition between multiline and single-line code
+Plug 'AndrewRadev/splitjoin.vim'
+
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Syntax highlighting
 Plug 'pangloss/vim-javascript'
 Plug 'groenewege/vim-less'

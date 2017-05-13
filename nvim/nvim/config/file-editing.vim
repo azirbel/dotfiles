@@ -52,3 +52,13 @@ nnoremap U <C-r>
 
 ":FormatJSON
 command! FormatJSON %!python -m json.tool
+
+""L-j
+""L-k
+" Intelligently expand/collapse blocks
+nnoremap <Leader>j :SplitjoinJoin<cr>
+nnoremap <Leader>k :SplitjoinSplit<cr>
+
+""L-j
+" Collapse lines, fallback for splitjoin.vim above
+vnoremap <Leader>j J
