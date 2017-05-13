@@ -7,7 +7,7 @@ source ~/.config/nvim/config/plugins.vim
 "TODO(azirbel): Replace with tpope/vim-sensible and refactor
 source ~/.config/nvim/config/editor.vim
 source ~/.config/nvim/config/editor/sessions.vim
-source ~/.config/nvim/config/file-management/wintabs.vim
+source ~/.config/nvim/config/plugins/wintabs.vim
 
 ""C-n
 ""C-m

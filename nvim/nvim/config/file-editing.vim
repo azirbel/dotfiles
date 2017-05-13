@@ -2,9 +2,6 @@
 "
 " When remapping keys, prefer using SHIFT.
 
-source ~/.config/nvim/config/file-editing/gitgutter.vim
-source ~/.config/nvim/config/file-editing/vim-markdown.vim
-
 ""esc-esc
 " Stop highlighting results after a search
 nnoremap <silent> <Esc><Esc> :noh<cr>

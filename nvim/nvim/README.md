@@ -54,3 +54,6 @@ Where:
 * Show warning past line limit
 * Configure backup files
 * Add JSON syntax highlighter
+* Try https://github.com/shuber/vim-promiscuous
+* Use https://github.com/Shougo/neomru.vim again. FZF doesn't cut it for history
+* Try https://github.com/tommcdo/vim-exchange

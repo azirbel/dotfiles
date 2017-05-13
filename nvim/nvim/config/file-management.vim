@@ -2,11 +2,6 @@
 "
 " When remapping keys, prefer using CTRL.
 
-source ~/.config/nvim/config/file-management/favex.vim
-source ~/.config/nvim/config/file-management/search.vim
-source ~/.config/nvim/config/file-management/nerd-tree.vim
-source ~/.config/nvim/config/file-management/wintabs.vim
-
 ""C-h
 ""C-j
 ""C-k

@@ -3,13 +3,6 @@
 "
 " Plugins in rough order of importance.
 
-
-" TODO(azirbel): Try https://github.com/shuber/vim-promiscuous
-" TODO(azirbel): Use https://github.com/Shougo/neomru.vim again. FZF doesn't
-" cut it for history
-" TODO(azirbel): Try https://github.com/tommcdo/vim-exchange
-
-
 " TODO(azirbel): Detect python2 on the system and set to that
 " TODO(azirbel): Not sure if we need this anymore.
 " TODO(azirbel): Note that I had to `pip install neovim` to get things running
