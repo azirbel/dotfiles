@@ -41,6 +41,8 @@ call plug#begin()
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'jpricey/fzf.vim'
 
+Plug 'scrooloose/syntastic'
+
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Give each window a set of tabs
@@ -128,6 +130,10 @@ Plug 'JPricey/vim-order-css'
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Search for the highlighted text.
+Plug 'JPricey/vim-v-star'
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Maintain a list of favorite files
 "
 " TODO(azirbel): Testing this one out. Some interesting ideas:
@@ -168,7 +174,14 @@ Plug 'junegunn/goyo.vim'
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "
 " TODO(azirbel): Testing this one out.
-Plug 'reedes/vim-pencil'
+"Plug 'vimwiki/vimwiki'
+
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"
+" TODO(azirbel): Testing this one out.
+" Don't like it. Too aggressive reformatting lines.
+"Plug 'reedes/vim-pencil'
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""

@@ -53,11 +53,5 @@ nnoremap U <C-r>
 " TODO(azirbel): Testing this out
 "nnoremap <BS> k^<S-j>
 
-
-" Automatically reformat text to hard wrap nicely
-" TODO(azirbel): Move to pencil config file
-" TODO(azirbel): I think this isn't working for me
-autocmd BufNewFile,BufRead *.md call pencil#init()
-
 ":FormatJSON
 command! FormatJSON %!python -m json.tool
