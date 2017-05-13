@@ -4,7 +4,6 @@ source ~/.config/nvim/config/plugins/gitgutter.vim
 source ~/.config/nvim/config/plugins/nerd-tree.vim
 source ~/.config/nvim/config/plugins/promiscuous.vim
 source ~/.config/nvim/config/plugins/search.vim
-source ~/.config/nvim/config/plugins/sessions.vim
 source ~/.config/nvim/config/plugins/syntastic.vim
 source ~/.config/nvim/config/plugins/vim-markdown.vim
 source ~/.config/nvim/config/plugins/wintabs.vim

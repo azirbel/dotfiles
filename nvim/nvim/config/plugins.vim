@@ -63,16 +63,6 @@ Plug 'scrooloose/nerdtree', { 'on': ['NERDTreeToggle', 'NERDTreeFind'] }
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Session management
-"
-" Save and restore the window layout when opening/closing vim.
-"
-" vim-misc is a dependency for vim-session.
-Plug 'xolox/vim-misc'
-Plug 'xolox/vim-session'
-
-
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Git commands
 "
 " A huge library of useful git integration. The commands I use most are
