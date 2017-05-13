@@ -1,4 +1,5 @@
 # Plugins installed by vim-plug
 plugged/
+promiscuous/
 sessions/
 undo/
