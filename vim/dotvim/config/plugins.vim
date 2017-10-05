@@ -33,15 +33,6 @@ Plug 'zefei/vim-wintabs'
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Autosave
-"
-" Since it's so easy to keep track of changes and roll them back with git,
-" there's no reason to manually think about saving. This also prevents stupid
-" errors.
-Plug '907th/vim-auto-save'
-
-
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Tree file browser in the sidebar.
 "
 " Ideally, should be closed when not needed; prefer window or buffer-based

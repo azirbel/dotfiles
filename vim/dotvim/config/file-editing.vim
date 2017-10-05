@@ -70,3 +70,7 @@ nnoremap <C-y><C-y> :TsuquyomiGeterr
 ""L-j
 " Collapse lines, fallback for splitjoin.vim above
 vnoremap <Leader>j J
+
+""'
+" Save quickly with '
+nnoremap ' :w<cr>

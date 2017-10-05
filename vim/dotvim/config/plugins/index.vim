@@ -1,4 +1,3 @@
-source ~/.vim/config/plugins/autosave.vim
 source ~/.vim/config/plugins/gitgutter.vim
 source ~/.vim/config/plugins/nerd-tree.vim
 source ~/.vim/config/plugins/promiscuous.vim
