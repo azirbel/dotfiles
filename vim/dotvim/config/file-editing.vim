@@ -40,12 +40,15 @@ nnoremap U <C-r>
 command! FormatJSON %!python -m json.tool
 
 ""C-y
-nnoremap <C-y>* :TsuDefinition<cr>
-nnoremap <C-y><S-n> :TsuquyomiGoBack<cr>
+""S-b
+nnoremap <leader>y :TsuDefinition<cr>
+nnoremap <C-y>b :TsuGoBack<cr>
 nnoremap <C-y>i :TsuImport<cr>
-nnoremap <C-y>t :TsuquyomiTypeDefinition<cr>
-nnoremap <C-y>f :TsuquyomiQuickFix<cr>
-nnoremap <C-y><C-y> :TsuquyomiGeterr
+nnoremap <C-y>t :TsuTypeDefinition<cr>
+nnoremap <C-y>f :TsuQuickFix<cr>
+nnoremap <C-y><C-y> :TsuGeterr<cr>
+nnoremap <C-y>r :TsuReferences<cr>
+imap <C-y> call tsuquyomi#complete()
 
 ""L-j
 " Collapse lines

@@ -30,7 +30,7 @@ set softtabstop=2   " Make the spaces editable like tabs
 set autoindent      " Copy indent from current line
 set ignorecase      " Ignore case in searches, except... (smartcase)
 set smartcase       " Be case-sensitive when search contains uppercase letter
-set cursorline      " Highlight the current line
+set nocursorline    " I love cursorline but it makes vim slow for some reason
 
 set shortmess=atI   " Don’t show the intro message when starting Vim
 set scrolloff=5     " Minimum number of lines above/below cursor in a search
@@ -78,3 +78,16 @@ ca rl so $MYVIMRC
 " Put link to current line on github into copy buffer
 nnoremap <leader>l V :Gbrowse!<CR>
 vnoremap <leader>l :Gbrowse!<CR>
+
+augroup autocommands
+  " Clear existing commands from this group so we don't define them twice
+  autocmd!
+
+  ""Quickfix CR
+  ""Quickfix o
+  autocmd BufReadPost quickfix nnoremap <buffer> <CR> <CR>
+  autocmd BufReadPost quickfix nnoremap <buffer> o <CR>:lcl<CR>
+
+  " Save on buffer exit
+  autocmd BufLeave * silent! :write
+augroup END

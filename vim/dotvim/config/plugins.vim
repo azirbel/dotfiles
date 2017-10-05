@@ -108,9 +108,16 @@ Plug 'tpope/vim-rails'
 Plug 'mattn/emmet-vim'
 
 
-""
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Typescript integrations
 Plug 'Quramy/tsuquyomi'
+
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Session management
+Plug 'xolox/vim-misc'
+Plug 'xolox/vim-session'
+
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Syntax highlighting
