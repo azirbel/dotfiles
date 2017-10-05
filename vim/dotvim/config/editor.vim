@@ -16,7 +16,7 @@ set hidden
 
 " Use the system clipboard for vim stuff
 " Requires xcopy / pbcopy / pbpaste to be installed
-set clipboard+=unnamedplus
+set clipboard=unnamed
 
 " Don't use swap files
 " We don't need backup swap files when we have autosave and git.
@@ -37,6 +37,8 @@ set scrolloff=5     " Minimum number of lines above/below cursor in a search
 set autoread        " Automatically reload files
 
 set undolevels=1000
+set backspace=indent,eol,start
+set hlsearch
 
 " Keep undo history in a file so it persists across sessions and doesn't get
 " cleared unexpectedly
@@ -50,12 +52,7 @@ let mapleader=" "
 
 ""L-w
 " Close all windows and exit vim
-" TODO(azirbel): Remove this command, use save-session-and-quit instead.
 nnoremap <leader>w :qal<CR>
-
-""L-e
-" Save a file as root, even if you weren't running vim with sudo
-nnoremap <leader>e :w !sudo tee % > /dev/null<CR>
 
 ""L-r
 " Redraw the window. Useful when vim gets confused and draws the lines in the

@@ -28,10 +28,6 @@ nnoremap <silent> <C-t> :NERDTreeToggle<CR><C-w>=
 " Go to current file in NERDTree
 nnoremap <C-r> :NERDTreeFind<CR><C-w>=
 
-""C-y
-" Open a tree to find a file.
-"nnoremap <C-y> :Ex<CR>
-
 ""C-u
 ""C-i
 " Move backward and forward in the jumplist (list of locations you have been)
@@ -45,7 +41,7 @@ nnoremap <silent> + :new<CR><C-w>L
 ""C-z
 ""C-x
 ""C-c
-" TODO(azirbel): Reserved - use for moving windows around
+" Reserved - use for moving windows around
 
 ""left
 ""right
@@ -66,14 +62,13 @@ nnoremap <silent> = <C-w>=
 nnoremap <C-p> :GFiles?<CR>
 
 ""C-o
-" Find files from git using FZF
+" Find files from git using FZF - include uncommitted files
 nnoremap <C-o> :GFiles --cached --others --exclude-standard<CR>
 
 ""C-f
 " Fuzzy find in files using FZF and Ag
 " Use ''<Left> to put the cursor within quotes automatically.
 " Use <C-u> to clear any existing commands before running this one.
-" TODO(azirbel): Use a sublime-like search. Fuzzy match isn't very useful.
 nnoremap <C-f> :<C-u>Ag 
 vnoremap <C-f> :<C-u>Ag 
 

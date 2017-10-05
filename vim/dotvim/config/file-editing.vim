@@ -36,28 +36,8 @@ vnoremap F <C-u>zz
 " Move backward and forward in undo history
 nnoremap U <C-r>
 
-""C-q
-""Q
-" Faster macro recording and replay at the cost of only using one register for
-" it. Uses the q register by default.
-" TODO(azirbel): Working on this
-"nnoremap <C-q> :g/\(<c-r>/\)/ normal @q
-"nno-remap Q *``Nqqn
-
-" Combine lines, since I remapped J.
-" Also, I prefer to be on the line which should be moved up, rather than the
-" line which stays in place.
-" TODO(azirbel): Testing this out
-"nnoremap <BS> k^<S-j>
-
 ":FormatJSON
 command! FormatJSON %!python -m json.tool
-
-""L-j
-""L-k
-" Intelligently expand/collapse blocks
-nnoremap <Leader>j :SplitjoinJoin<cr>
-nnoremap <Leader>k :SplitjoinSplit<cr>
 
 ""C-y
 nnoremap <C-y>* :TsuDefinition<cr>
@@ -68,7 +48,7 @@ nnoremap <C-y>f :TsuquyomiQuickFix<cr>
 nnoremap <C-y><C-y> :TsuquyomiGeterr
 
 ""L-j
-" Collapse lines, fallback for splitjoin.vim above
+" Collapse lines
 vnoremap <Leader>j J
 
 ""'

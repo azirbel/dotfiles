@@ -3,16 +3,23 @@
 Main features:
 
 * Sublime-like "find in files" search
-* Unite-powered fuzzy file search and most recently used list
-* Windows which auto-maximize vertically
-* A large number of custom remappings
+* FZF-powered fuzzy file search, with git files and history
+* Tab-style windows
+* A lot of custom remappings
 
 ## Setup
 
 Run `~/install.sh`, which will set up symlinks for `~/.vimrc` and `~/.vim` to
 directories here.
 
-For now, my sublime-like search depends on a couple of custom scripts (in the
-`scripts` directory).
+Plugins will be installed via vim-plug once you start vim.
 
-Plugins will be installed via Neobundle once you start vim.
+## Wishlist
+
+* [ ] Session autosave and load based on git branch
+* [ ] PR creation inside git
+* [ ] Autosave
+* [ ] Better async linting
+* [ ] File explorer / opener inside a window, instead of sidebar
+* [ ] Sublime-style search that shows context
+* [ ] Better quickfix list and location list commands

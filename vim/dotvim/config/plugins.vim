@@ -70,7 +70,7 @@ Plug 'bronson/vim-trailing-whitespace'
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Sort CSS properties in "outside-in" order.
+" Sort CSS properties in "outside-in" order using :OrderCSS
 " I worked on this plugin with Joe.
 Plug 'JPricey/vim-order-css'
 
@@ -104,23 +104,12 @@ Plug 'tpope/vim-rails'
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Ruby on Rails power tools
-Plug 'shuber/vim-promiscuous'
-
-
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Simplifies the transition between multiline and single-line code
-" Doesn't seem to work very well
-Plug 'AndrewRadev/splitjoin.vim'
-
-
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Type HTML faster
 Plug 'mattn/emmet-vim'
 
 
 ""
-" TESTING
+" Typescript integrations
 Plug 'Quramy/tsuquyomi'
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
