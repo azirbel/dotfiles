@@ -14,6 +14,11 @@ directories here.
 
 Plugins will be installed via vim-plug once you start vim.
 
+## TODO
+
+* [ ] Only restore session if vim is opened without any arguments. Profile the
+      effect of this on startup time.
+
 ## Wishlist
 
 * [ ] Session autosave and load based on git branch
