@@ -100,7 +100,7 @@ Plug 'mattn/gist-vim'
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Ruby on Rails power tools
 Plug 'tpope/vim-bundler'
-Plug 'tpope/vim-rails'
+Plug 'tpope/vim-rails', { 'for': ['ruby'] }
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -116,7 +116,7 @@ Plug 'Quramy/tsuquyomi'
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Session management
 Plug 'xolox/vim-misc'
-Plug 'xolox/vim-session'
+Plug 'xolox/vim-session', { 'on': ['SaveSession', 'OpenSession'] }
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -127,7 +127,7 @@ Plug 'tpope/vim-markdown'
 Plug 'slim-template/vim-slim'
 Plug 'digitaltoad/vim-jade'
 Plug 'tpope/vim-git'
-Plug 'vim-ruby/vim-ruby'
+Plug 'vim-ruby/vim-ruby', { 'for': ['ruby'] }
 Plug 'mustache/vim-mustache-handlebars'
 Plug 'leafgarland/typescript-vim'
 
