@@ -27,3 +27,5 @@ let NERDTreeMapMenu='~'
 
 " TODO(azirbel): Fix C-o and C-i so they move you to the window on the right
 " before opening a file picker
+
+let NERDTreeHijackNetrw=0

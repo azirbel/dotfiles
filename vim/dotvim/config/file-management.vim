@@ -72,9 +72,15 @@ nnoremap <C-o> :GFiles --cached --others --exclude-standard<CR>
 nnoremap <C-f> :<C-u>Ag 
 vnoremap <C-f> :<C-u>Ag 
 
+"""
+" Quote to invoke vinegar file browser
+" IMPORTANT: Must go before the remap of `-`, because vinegar maps `-`
+nmap " <Plug>VinegarUp
+
 ""minus
 " Close tabs with -
 " Also closes windows, if this is the last tab
+" IMPORTANT: Must go after the mapping of VinegarUp
 nnoremap <silent> - :WintabsClose<CR>
 
 ""underscore

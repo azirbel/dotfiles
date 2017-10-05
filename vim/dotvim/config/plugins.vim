@@ -119,6 +119,10 @@ Plug 'xolox/vim-misc'
 Plug 'xolox/vim-session', { 'on': ['SaveSession', 'OpenSession'] }
 
 
+" Testing
+Plug 'tpope/vim-vinegar'
+
+
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Syntax highlighting
 Plug 'pangloss/vim-javascript'
