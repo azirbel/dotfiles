@@ -14,4 +14,4 @@ let g:session_autosave = 'yes'
 let g:session_command_aliases = 1
 
 " Don't show message during autosave
-"let g:session_autosave_silent = 1
+let g:session_autosave_silent = 1
