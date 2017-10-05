@@ -30,7 +30,7 @@ nnoremap <C-r> :NERDTreeFind<CR><C-w>=
 
 ""C-y
 " Open a tree to find a file.
-nnoremap <C-y> :Ex<CR>
+"nnoremap <C-y> :Ex<CR>
 
 ""C-u
 ""C-i

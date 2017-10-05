@@ -132,8 +132,19 @@ Plug 'shuber/vim-promiscuous'
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Simplifies the transition between multiline and single-line code
+" Doesn't seem to work very well
 Plug 'AndrewRadev/splitjoin.vim'
 
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Type HTML faster
+Plug 'mattn/emmet-vim'
+
+
+""
+" TESTING
+Plug 'Shougo/vimproc.vim', {'do' : 'make'}
+Plug 'Quramy/tsuquyomi'
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Syntax highlighting
@@ -145,6 +156,7 @@ Plug 'digitaltoad/vim-jade'
 Plug 'tpope/vim-git'
 Plug 'vim-ruby/vim-ruby'
 Plug 'mustache/vim-mustache-handlebars'
+Plug 'leafgarland/typescript-vim'
 
 
 " Add plugins to &runtimepath
