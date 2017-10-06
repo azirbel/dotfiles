@@ -33,10 +33,14 @@ Plug 'zefei/vim-wintabs'
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Tree file browser in the sidebar.
+" File pickers
 "
-" Ideally, should be closed when not needed; prefer window or buffer-based
-" file management to tree-based file management.
+" Prefer vinegar (netrw-style picker) when possible - it displays within the
+" current window and gets out of the way once it's not needed.
+"
+" NERDTree is still useful when you do need that high-level overview of files;
+" are working with a small project; or need to rename files.
+Plug 'tpope/vim-vinegar'
 Plug 'scrooloose/nerdtree', { 'on': ['NERDTreeToggle', 'NERDTreeFind'] }
 
 
@@ -63,26 +67,14 @@ Plug 'tpope/vim-repeat'
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Highlight trailing whitespace in red
-"
-" Call :FixWhitespace to fix the errors (operates on the whole file)
-Plug 'bronson/vim-trailing-whitespace'
-
-
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Sort CSS properties in "outside-in" order using :OrderCSS
-" I worked on this plugin with Joe.
-Plug 'JPricey/vim-order-css'
-
-
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Search for the highlighted text.
-Plug 'JPricey/vim-v-star'
-
-
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Search and replace over a visual range
 Plug 'osyo-manga/vim-over'
+
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Session management
+Plug 'xolox/vim-misc'
+Plug 'xolox/vim-session', { 'on': ['SaveSession', 'OpenSession'] }
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -98,29 +90,39 @@ Plug 'mattn/gist-vim'
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Ruby on Rails power tools
+" Ruby on Rails integration
 Plug 'tpope/vim-bundler'
 Plug 'tpope/vim-rails', { 'for': ['ruby'] }
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Type HTML faster
-Plug 'mattn/emmet-vim'
-
-
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Typescript integrations
+" Typescript integration
 Plug 'Quramy/tsuquyomi'
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Session management
-Plug 'xolox/vim-misc'
-Plug 'xolox/vim-session', { 'on': ['SaveSession', 'OpenSession'] }
+" Sort CSS properties in "outside-in" order using :OrderCSS
+" I worked on this plugin with Joe (Joe did the hard parts).
+"
+" Might be better to replace this with e.g. CSS Comb.
+Plug 'JPricey/vim-order-css'
 
 
-" Testing
-Plug 'tpope/vim-vinegar'
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Search for the highlighted text.
+Plug 'JPricey/vim-v-star'
+
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Highlight trailing whitespace in red
+"
+" Call :FixWhitespace to fix the errors (operates on the whole file)
+Plug 'bronson/vim-trailing-whitespace'
+
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Type HTML faster
+Plug 'mattn/emmet-vim'
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""

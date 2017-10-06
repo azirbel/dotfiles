@@ -7,5 +7,4 @@ source ~/.vim/config/plugins/index.vim
 " Everything else
 source ~/.vim/config/abbreviations.vim
 source ~/.vim/config/editor.vim
-source ~/.vim/config/file-editing.vim
-source ~/.vim/config/file-management.vim
+source ~/.vim/config/mappings.vim

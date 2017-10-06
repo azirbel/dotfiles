@@ -59,34 +59,14 @@ endif
 " Use SPACE as the leader key, instead of backslash
 let mapleader=" "
 
-""L-w
-" Close all windows and exit vim
-nnoremap <leader>w :qal<CR>
-
-""L-r
-" Redraw the window. Useful when vim gets confused and draws the lines in the
-" wrong places for no reason
-nnoremap <leader>r :redraw!<CR>
-
-""L-p
-" Copy path of current file into current/unnamed copy buffer
-" Useful to e.g. grab your filename and paste into chat or your test runner
-nnoremap <silent> <leader>p :let @+ = expand("%")<CR>
-
-""Q
-" No-op: Disable ex mode, which is evil
-nnoremap Q <nop>
-
 " Make it easy to open vimrc for editing (command :vrc)
 ca vrc e ~/projects/dotfiles/vim/vimrc
 
 " Reload vimrc from anywhere (command :rl)
 ca rl so $MYVIMRC
 
-""L-l
-" Put link to current line on github into copy buffer
-nnoremap <leader>l V :Gbrowse!<CR>
-vnoremap <leader>l :Gbrowse!<CR>
+":FormatJSON
+command! FormatJSON %!python -m json.tool
 
 augroup autocommands
   " Clear existing commands from this group so we don't define them twice
