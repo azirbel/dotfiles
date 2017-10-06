@@ -2,10 +2,6 @@
 "
 " When remapping keys, prefer using SHIFT.
 
-""esc-esc
-" Stop highlighting results after a search
-nnoremap <silent> <Esc><Esc> :noh<cr>
-
 ""H
 ""J
 ""K
@@ -41,10 +37,10 @@ command! FormatJSON %!python -m json.tool
 
 ""C-y
 ""S-b
-nnoremap <leader>y :TsuDefinition<cr>
+nnoremap <leader>y :TsuDefinition<cr>zz
 nnoremap <C-y>b :TsuGoBack<cr>
 nnoremap <C-y>i :TsuImport<cr>
-nnoremap <C-y>t :TsuTypeDefinition<cr>
+nnoremap <C-y>t :TsuTypeDefinition<cr>zz
 nnoremap <C-y>f :TsuQuickFix<cr>
 nnoremap <C-y><C-y> :TsuGeterr<cr>
 nnoremap <C-y>r :TsuReferences<cr>
@@ -56,4 +52,5 @@ vnoremap <Leader>j J
 
 ""'
 " Save quickly with '
-nnoremap ' :w<cr>
+" Also kills search highlighting. Intended to be an easy mashable button.
+nnoremap ' :noh<cr>:w<cr>

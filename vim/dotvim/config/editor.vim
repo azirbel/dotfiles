@@ -40,6 +40,15 @@ set undolevels=1000
 set backspace=indent,eol,start
 set hlsearch
 
+" Get rid of delay exiting visual mode.
+" See https://www.johnhawthorn.com/2012/09/vi-escape-delays/
+set timeoutlen=1000 ttimeoutlen=0
+
+" Faster ruby syntax highlighting in new versions of vim, by using the old
+" regex engine. See
+" https://stackoverflow.com/questions/16902317/vim-slow-with-ruby-syntax-highlighting
+set re=1
+
 " Keep undo history in a file so it persists across sessions and doesn't get
 " cleared unexpectedly
 if has('persistent_undo')
@@ -90,4 +99,7 @@ augroup autocommands
 
   " Save on buffer exit
   autocmd BufLeave * silent! :write
+
+  " Always make quickfix window full width, since it's global anyway
+  autocmd filetype qf wincmd J
 augroup END
