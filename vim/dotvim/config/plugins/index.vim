@@ -3,5 +3,6 @@ source ~/.vim/config/plugins/search.vim
 source ~/.vim/config/plugins/session.vim
 source ~/.vim/config/plugins/syntastic.vim
 source ~/.vim/config/plugins/tsuquyomi.vim
+source ~/.vim/config/plugins/vim-fixmyjs.vim
 source ~/.vim/config/plugins/vim-markdown.vim
 source ~/.vim/config/plugins/wintabs.vim

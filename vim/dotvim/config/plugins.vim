@@ -125,6 +125,10 @@ Plug 'bronson/vim-trailing-whitespace'
 Plug 'mattn/emmet-vim'
 
 
+" Testing
+Plug 'ruanyl/vim-fixmyjs'
+
+
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Syntax highlighting
 Plug 'pangloss/vim-javascript'
@@ -136,6 +140,7 @@ Plug 'tpope/vim-git'
 Plug 'vim-ruby/vim-ruby', { 'for': ['ruby'] }
 Plug 'mustache/vim-mustache-handlebars'
 Plug 'leafgarland/typescript-vim'
+Plug 'alampros/vim-styled-jsx'
 
 
 " Add plugins to &runtimepath
